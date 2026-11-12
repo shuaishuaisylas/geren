@@ -1,0 +1,12 @@
+{
+  "api_version": "recon.v1-design (offline CLI; not a deployed service)",
+  "biz_template": "TPL-BIZ-FIELD-RULE-2026-11-12-A",
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "eng_design": "TPL-ENG-RECON-DESIGN-2026-11-12-A (R2)",
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "eval_baseline": "EVAL-TD-BASELINE-2026-11-12-R1",
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "prd": "PRD-FREIGHT-RECON-2026-11-12-A",
+  "sim_rule_version": "RV-SIM-2026-11-12-A"
+}

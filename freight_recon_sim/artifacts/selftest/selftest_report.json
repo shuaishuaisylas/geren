@@ -1,0 +1,740 @@
+{
+  "title": "研发自测报告（非独立评测、非业务验收）",
+  "generated_at": "2026-11-12T11:58:11+08:00",
+  "engine_version": "0.1.0",
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "sim_rule_version": "RV-SIM-2026-11-12-A",
+  "eval_baseline": "EVAL-TD-BASELINE-2026-11-12-R1",
+  "python": "3.12.3",
+  "platform": "Linux-6.12.113+-x86_64-with-glibc2.39",
+  "git_commit_under_test": "b139d97f791a723f253bbe000c177c0236854971",
+  "tests_run": 67,
+  "totals": {
+    "pass": 67,
+    "fail": 0,
+    "error": 0,
+    "skipped": 0
+  },
+  "elapsed_seconds": 7.042,
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "business_acceptance_status": "未启动（真实脱敏样本、业务金标、人工基线与阈值均未提供）",
+  "baseline_cases": [
+    {
+      "case": "TC-01",
+      "scene": "正常一对一金额一致",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-02",
+      "scene": "账单侧重复计费",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-03",
+      "scene": "账单有、运单明细缺失",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-04",
+      "scene": "运单明细有、账单缺失",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-05",
+      "scene": "金额不一致",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-06",
+      "scene": "规则缺失",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-07",
+      "scene": "缺计费重量字段",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-08",
+      "scene": "匹配不唯一",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-09",
+      "scene": "舍入边界一致 1.005→1.01",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-10",
+      "scene": "舍入边界不一致（截断 1.00）",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-11",
+      "scene": "证据链完整性",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-12",
+      "scene": "敏感数据输出抑制",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-13",
+      "scene": "缺匹配键（运单号为空）",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-14",
+      "scene": "多步计算与舍入层级",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-15",
+      "scene": "同运单两项收费均一致",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-16",
+      "scene": "字段映射必须人工确认",
+      "kind": "baseline",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-17",
+      "scene": "源数据不可改写",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-18",
+      "scene": "禁止记账",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-19",
+      "scene": "禁止付款",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-20",
+      "scene": "批级整列缺失阻断",
+      "kind": "baseline",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-21",
+      "scene": "FS001 依赖 FR001 阻断",
+      "kind": "baseline",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-22",
+      "scene": "分隔符碰撞",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-23",
+      "scene": "未登记公式/自由表达式拒绝求值",
+      "kind": "baseline",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-24",
+      "scene": "CSV 公式注入拒绝（负金额对照）",
+      "kind": "baseline",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-25",
+      "scene": "幂等重跑",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-26",
+      "scene": "多错误优先级归并",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-27",
+      "scene": "批级：编码失败与格式失败",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-28",
+      "scene": "批级：目录无法加载/未冻结/快照不一致",
+      "kind": "baseline",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    },
+    {
+      "case": "TC-29",
+      "scene": "批级：批次账期无法识别",
+      "kind": "baseline",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "未执行"
+    }
+  ],
+  "self_built_cases": [
+    {
+      "case": "TC-D01",
+      "scene": "分隔符碰撞（交换位置）",
+      "kind": "self-built",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-22"
+    },
+    {
+      "case": "TC-D02",
+      "scene": "恶意/可求值形态公式与非模拟目录",
+      "kind": "self-built",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-23"
+    },
+    {
+      "case": "TC-D03",
+      "scene": "输出 CSV 公式注入防护",
+      "kind": "self-built",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-24"
+    },
+    {
+      "case": "TC-D04",
+      "scene": "重跑一致与篡改拒绝",
+      "kind": "self-built",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-25"
+    },
+    {
+      "case": "TC-D05",
+      "scene": "账单侧整列缺失 / 单格为空区分",
+      "kind": "self-built",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-20"
+    },
+    {
+      "case": "TC-D06",
+      "scene": "多条件优先级组合",
+      "kind": "self-built",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-26"
+    },
+    {
+      "case": "TC-D07",
+      "scene": "附加费依赖：基础不唯一/缺失/未入账",
+      "kind": "self-built",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-21"
+    },
+    {
+      "case": "TC-D08",
+      "scene": "映射未确认与非法确认",
+      "kind": "self-built",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "selftest_result": "研发自测通过",
+      "independent_eval_status": "不适用（自建补测，非基线用例）",
+      "related_baseline_case": "TC-16"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_01_exact_unique_match_consistent",
+      "case": "TC-01",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_02_bill_side_duplicate",
+      "case": "TC-02",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_03_bill_without_waybill",
+      "case": "TC-03",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_04_waybill_without_bill",
+      "case": "TC-04",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_05_amount_mismatch",
+      "case": "TC-05",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_06_rule_missing_no_fallback",
+      "case": "TC-06",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_07_missing_chargeable_weight",
+      "case": "TC-07",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_08_multiple_waybill_candidates",
+      "case": "TC-08",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_09_rounding_boundary_consistent",
+      "case": "TC-09",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_10_rounding_boundary_truncated_bill",
+      "case": "TC-10",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_11_evidence_chain_complete",
+      "case": "TC-11",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_12_sensitive_output_suppressed",
+      "case": "TC-12",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_13_missing_waybill_no_no_fuzzy_match",
+      "case": "TC-13",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_14_single_final_rounding",
+      "case": "TC-14",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_TC_15_two_charges_same_waybill",
+      "case": "TC-15",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_exports_have_no_pass_without_label",
+      "case": "SUPPORT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc01_15.MainBatch.test_pipeline_completed_row_level",
+      "case": "SUPPORT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC16MappingGate.test_TC_16_A_ai_candidate_only_blocks",
+      "case": "TC-16",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC16MappingGate.test_TC_16_B_confirmation_bound_to_person_time_version",
+      "case": "TC-16",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC16MappingGate.test_TC_16_B_supplement_confirmed_mapping_reaches_reconcile",
+      "case": "TC-16",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC16MappingGate.test_TC_16_C_changed_mapping_without_reconfirmation_blocks",
+      "case": "TC-16",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC17ReadOnlySource.test_TC_17_source_files_untouched_derived_copy_only",
+      "case": "TC-17",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC18NoLedger.test_TC_18_ledger_requests_refused",
+      "case": "TC-18",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC19NoPayment.test_TC_19_payment_requests_refused",
+      "case": "TC-19",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC20WholeColumnMissing.test_TC_20_batch_block_then_reconfirm_and_rerun",
+      "case": "TC-20",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC20WholeColumnMissing.test_TC_20_distinct_from_row_level_TC_07",
+      "case": "TC-20",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC21SurchargeDependency.test_TC_21_A_base_unavailable",
+      "case": "TC-21",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC21SurchargeDependency.test_TC_21_B_base_row_failed_surcharge_not_pass",
+      "case": "TC-21",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC22Delimiter.test_TC_22_delimiter_collision_no_split_no_cross_match",
+      "case": "TC-22",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC23NoEval.test_TC_23_A_unregistered_formula_id",
+      "case": "TC-23",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC23NoEval.test_TC_23_B_free_expression_refused",
+      "case": "TC-23",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC23NoEval.test_TC_23_static_no_dynamic_evaluation_in_engine",
+      "case": "TC-23",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC24FormulaInjection.test_TC_24_A_formula_prefixes_rejected",
+      "case": "TC-24",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC24FormulaInjection.test_TC_24_B_negative_amount_accepted",
+      "case": "TC-24",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC25Idempotency.test_TC_25_replay_same_and_reject_changed",
+      "case": "TC-25",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC26MultiErrorMerge.test_TC_26_duplicate_and_multi_candidate",
+      "case": "TC-26",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC27EncodingFormat.test_TC_27_encoding_and_format_failures_distinct",
+      "case": "TC-27",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_LOAD_malformed_catalog",
+      "case": "TC-28",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_LOAD_missing_catalog",
+      "case": "TC-28",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_REC_002_requested_snapshot_mismatch",
+      "case": "TC-28",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_UNFROZEN_catalog_without_snapshot",
+      "case": "TC-28",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_eval_baseline_tc16_29.TC29Period.test_TC_29_unrecognised_batch_period",
+      "case": "TC-29",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D01_DelimiterCollision.test_TC_D01_swapped_delimiter_positions_never_collide",
+      "case": "TC-D01",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D02_MaliciousFormula.test_TC_D02_evaluable_looking_expression_is_never_evaluated",
+      "case": "TC-D02",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D02_MaliciousFormula.test_TC_D02_non_simulated_approval_status_not_loaded",
+      "case": "TC-D02",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D03_OutputInjection.test_TC_D03_main_batch_csv_export_has_no_live_formula_cells",
+      "case": "TC-D03",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D03_OutputInjection.test_TC_D03_rendered_csv_neutralises_formula_text",
+      "case": "TC-D03",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D03_OutputInjection.test_TC_D03_sanitize_cell",
+      "case": "TC-D03",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D04_Rerun.test_TC_D04_reconcile_and_export_reruns_are_identical_and_not_rewritten",
+      "case": "TC-D04",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D04_Rerun.test_TC_D04_tampered_results_refused_on_export",
+      "case": "TC-D04",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D05_WholeColumnMissing.test_TC_D05_bill_side_required_columns_missing",
+      "case": "TC-D05",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D05_WholeColumnMissing.test_TC_D05_single_empty_cell_stays_row_level",
+      "case": "TC-D05",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D06_Priority.test_TC_D06_combinations_keep_all_reasons",
+      "case": "TC-D06",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D07_SurchargeDependency.test_TC_D07_base_not_unique_missing_or_unbilled",
+      "case": "TC-D07",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D08_MappingUnconfirmed.test_TC_D08_invalid_confirmations_refused",
+      "case": "TC-D08",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_tc_d01_d08.TC_D08_MappingUnconfirmed.test_TC_D08_reconcile_refused_without_confirmation",
+      "case": "TC-D08",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.CliContract.test_UNIT_desensitized_declaration_required",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.CliContract.test_UNIT_fixture_manifest_hashes",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.CliContract.test_UNIT_frozen_snapshot_matches_catalog_bytes",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.CliContract.test_UNIT_info_and_usage_exit_codes",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.CliContract.test_UNIT_log_is_whitelisted",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.DecimalUnits.test_UNIT_half_up_and_exact_products",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.DecimalUnits.test_UNIT_parse_decimal_rejects_non_plain_strings",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.DecimalUnits.test_UNIT_results_contain_no_binary_floats",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.GuardUnits.test_UNIT_engine_has_no_network_or_external_service_imports",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.GuardUnits.test_UNIT_formula_prefix_boundary",
+      "case": "UNIT",
+      "outcome": "pass"
+    },
+    {
+      "test_id": "test_selfbuilt_units.GuardUnits.test_UNIT_sensitive_guard_blocks_leak",
+      "case": "UNIT",
+      "outcome": "pass"
+    }
+  ]
+}

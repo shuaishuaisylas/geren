@@ -1,0 +1,23 @@
+{
+  "block_scope": "批级",
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "error": {
+    "code": "IMP-007",
+    "detail": {
+      "detail": "同幂等键但输入包或规则目录哈希不同，拒绝覆盖；既有批次保持不变",
+      "existing_import_batch_id": "IB-SIM-479049e22115a20f",
+      "existing_input_bundle_sha256": "16ad888658b125a327aa07a5b7c92f5ab585c75fe9bb5b80101424d0cfe46395",
+      "new_input_bundle_sha256": "3fa08a3373f8b1ec7efa571471272a6d12c042676b6c8e9b044065eda8d3ae11"
+    },
+    "meaning": "幂等键冲突：同键不同源哈希或目录哈希，拒绝覆盖"
+  },
+  "file_sha256": {
+    "SIM_BILL": "594312890defc6c18f90da6f9f17b655be2102481c99edaed32b318368ce494a",
+    "SIM_WAYBILL": "ff29a648ed8e4340acd71df37c236a2b1bccca97a44661f3eba836dce78c2c1a"
+  },
+  "idempotency_key": "IDEMP-SIM-0305",
+  "ingest_status": "rejected",
+  "reconcile_allowed": false,
+  "rejection_id": "IR-SIM-b8543f140fd41806",
+  "replayed": false
+}

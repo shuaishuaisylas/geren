@@ -1,0 +1,49 @@
+{
+  "derived_copy_id": "DRV-IB-SIM-70a07d8b16797aaa-SIM_WAYBILL",
+  "derived_version": "v1",
+  "lineage": {
+    "import_batch_id": "IB-SIM-70a07d8b16797aaa",
+    "source_file_sha256": "c1672e80ed137e19af34a5ec5d640ca7fafc68bef0438e3196394fc254a824b3",
+    "source_table": "SIM_WAYBILL"
+  },
+  "note": "派生副本：仅在此副本上规范化；源文件只读未改写；敏感字段不进入派生副本。",
+  "rows": [
+    {
+      "file_line": 2,
+      "source_row_id": "CW01",
+      "source_row_sha256": "de261c6dd092b39bad03eeabd94e5aad0a14740c5eb57aec893fa624d4570e5c",
+      "values": {
+        "charge_code": "FR001",
+        "source_row_id": "CW01",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0201"
+      }
+    },
+    {
+      "file_line": 3,
+      "source_row_id": "CW02",
+      "source_row_sha256": "c7f8a3e1f72f204d7a3d34dc9cdf5ba88e8c427eb40c6db48acbfd3983334941",
+      "values": {
+        "charge_code": "FR001",
+        "source_row_id": "CW02",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0202"
+      }
+    },
+    {
+      "file_line": 4,
+      "source_row_id": "CW03",
+      "source_row_sha256": "561f4cca400b95ab8d1be14caf4cce687a7178550f6b64ff7b55f3aaad9ae306",
+      "values": {
+        "charge_code": "FR001",
+        "source_row_id": "CW03",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0203"
+      }
+    }
+  ],
+  "transform_log": []
+}

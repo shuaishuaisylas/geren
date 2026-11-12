@@ -1,0 +1,89 @@
+{
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "declared_delimiter": "comma",
+  "declared_encoding": "UTF-8",
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "file_digests": [
+    {
+      "bytes": 840,
+      "file_sha256": "e93a7257f9a6072896e3cf394a216f891adb5eace2a7f3e031d651d50f03715e",
+      "rows": 16,
+      "source_table": "SIM_BILL"
+    },
+    {
+      "bytes": 689,
+      "file_sha256": "ec186aa275bb8000cd7f82f92c25acf44ec008fa31da4a6694f7f3ea441c1ab1",
+      "rows": 16,
+      "source_table": "SIM_WAYBILL"
+    }
+  ],
+  "headers": {
+    "SIM_BILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "bill_amount",
+      "billing_period",
+      "currency",
+      "remark"
+    ],
+    "SIM_WAYBILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "unit_price",
+      "chargeable_weight",
+      "surcharge_rate",
+      "remark"
+    ]
+  },
+  "idempotency_key": "DEMO-MAIN",
+  "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+  "imported_at": "2026-11-12T11:58:11+08:00",
+  "ingest_status": "accepted",
+  "input_bundle_sha256": "d908f60e21e9c523588a2707e7c19f2d4272c194229e0b69733edcf205992c3c",
+  "row_digests": {
+    "SIM_BILL": [
+      "d20286849bbc83542963bc9b67a147fb8409a49b6d9ecdf775b90e08ff31b2a1",
+      "6b503f24402b7c625b1055956f55f70c44a79219e07f91863188a2a8aecd2634",
+      "31e7676928ec40e99857a767405ab30b889f5b4cbfc66cd85577129212a43850",
+      "5331984758b7035f50f8450e44de3ccb64d6846add1e7f656d315bca3e1e5670",
+      "bd11f8b6cab0c195e812eb611198d5d77dcf92252b3674afb44daf55a187d863",
+      "f5aa8868067921819a6c2b48cefbf44db2bc2b4ded0c9fb132762088686ff208",
+      "8f4ac9710f611713bfd5c69c31c5a2b93f39611921779cc1cb287051c2a683b8",
+      "55370bd7bf26048f0e9caca4a3998926a977d8188d7c5f8ff00e44a72eb0e0be",
+      "690bc0ea9fee6e6184123d71b0bcc92b37921c96ec5a6eeac62496ebe2887835",
+      "9ac5248b0f08e32d86a23201c6f50966dc5dbd3b04846dc38fbf21d289ff606d",
+      "4af889bedf31b9b899ca4c3c6df995718fde8fde6907c26060c07bbb5edfa1c4",
+      "af3f5cec0c59b21ea0cfd3cb55309ee62c0f7740ea25d823336241d7e90eaeea",
+      "2cd63c74082245bae7cc0cf43682daa5f1fa19b63a98a36d1a892a849c244e88",
+      "29ea34e74ddd0a703875080a166168beab9e7eae6595889a86f164d9a4634731",
+      "228f69a13614515eb95a39b12a2ef469939bacfed4d554a7c8b9736d934dcd33",
+      "13e0ce190823cd43e8beb45349a6826808999a4e3bb596242b154c8f220574a3"
+    ],
+    "SIM_WAYBILL": [
+      "4fc5b59ef3f504d805a9f455551615d3079e21896c0e7f4097ef32e924649b94",
+      "9dbfcfbcbdc3fc3e4287319a822cac120cea167a2d1110800c6e18b65060018c",
+      "ff4b66f3c66a03e903033154365281d722701181e7b833c802b981a877a898ab",
+      "25fd4ec22302413bfdd733a6bc699f03c460ac237e9f1d11d38750cbb61e87c8",
+      "8611cdd80f20d4101e68f1988bffa0dbc79b44bae5022142fda993e65c2721b7",
+      "ad961f69259ca547980bfe92c9f4bd07dbacc2bf5d1f82e9188c542d2d6b9230",
+      "9433e9e7ec4b5e1f55bbf948afa5772508fd045f9a47f19daed4ebfe9f0a952d",
+      "d8c4f85c6a9ad37a7003b496f911b8ebe3486b1c7788590bb79cb18c088d823e",
+      "c66f19c54c4a3075847848f4bbecf2213a5325135af8fda066a97a93a81ad40c",
+      "912c3a4546beab8c70643477537e33a72c8d80a3347fc15d08ee61d9f361c786",
+      "504f8e87e1c08de9d7c9c85f86bfba4eeaba929c24d660ac254f7c8c005e6a23",
+      "a71904b35d61835ac1614e2f195a1b6ac1dbf66fda1c0b6688c2b7acbf0407d4",
+      "d811a5c6f90d7685d74c2ad4d83ffd0b15e3cbfd8ed6abb08586b711c9775193",
+      "54e863d4eac100e8f048b8cb5b2bd92cd3e077bfbd01c6f540a93086e3072744",
+      "7d7ac29980c733609a202a70b88538a25bfd19ea68af496ba06c3b43d612f8f3",
+      "5a32fa64b6d3c81d02c3b86169b9c248cde4d63a053ef3152bd2a05b42e079e4"
+    ]
+  },
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_catalog_status": "present",
+  "rule_snapshot_file_sha256": "366c7a82be79a3ae31fd35f0cf039ab95cba53be4909a80fe64601f2dada6b1f",
+  "rule_snapshot_status": "present",
+  "source_declared_desensitized": true
+}

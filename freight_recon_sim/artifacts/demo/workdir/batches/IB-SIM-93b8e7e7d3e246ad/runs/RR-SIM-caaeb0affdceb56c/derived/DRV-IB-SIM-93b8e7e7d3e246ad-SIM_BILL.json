@@ -1,0 +1,221 @@
+{
+  "derived_copy_id": "DRV-IB-SIM-93b8e7e7d3e246ad-SIM_BILL",
+  "derived_version": "v1",
+  "lineage": {
+    "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+    "source_file_sha256": "e93a7257f9a6072896e3cf394a216f891adb5eace2a7f3e031d651d50f03715e",
+    "source_table": "SIM_BILL"
+  },
+  "note": "派生副本：仅在此副本上规范化；源文件只读未改写；敏感字段不进入派生副本。",
+  "rows": [
+    {
+      "file_line": 2,
+      "source_row_id": "B01",
+      "source_row_sha256": "d20286849bbc83542963bc9b67a147fb8409a49b6d9ecdf775b90e08ff31b2a1",
+      "values": {
+        "bill_amount": "125.50",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B01",
+        "waybill_no": "WB-SIM-0001"
+      }
+    },
+    {
+      "file_line": 3,
+      "source_row_id": "B02",
+      "source_row_sha256": "6b503f24402b7c625b1055956f55f70c44a79219e07f91863188a2a8aecd2634",
+      "values": {
+        "bill_amount": "80.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B02",
+        "waybill_no": "WB-SIM-0002"
+      }
+    },
+    {
+      "file_line": 4,
+      "source_row_id": "B03",
+      "source_row_sha256": "31e7676928ec40e99857a767405ab30b889f5b4cbfc66cd85577129212a43850",
+      "values": {
+        "bill_amount": "80.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B03",
+        "waybill_no": "WB-SIM-0002"
+      }
+    },
+    {
+      "file_line": 5,
+      "source_row_id": "B04",
+      "source_row_sha256": "5331984758b7035f50f8450e44de3ccb64d6846add1e7f656d315bca3e1e5670",
+      "values": {
+        "bill_amount": "60.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B04",
+        "waybill_no": "WB-SIM-0003"
+      }
+    },
+    {
+      "file_line": 6,
+      "source_row_id": "B05",
+      "source_row_sha256": "bd11f8b6cab0c195e812eb611198d5d77dcf92252b3674afb44daf55a187d863",
+      "values": {
+        "bill_amount": "132.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B05",
+        "waybill_no": "WB-SIM-0005"
+      }
+    },
+    {
+      "file_line": 7,
+      "source_row_id": "B06",
+      "source_row_sha256": "f5aa8868067921819a6c2b48cefbf44db2bc2b4ded0c9fb132762088686ff208",
+      "values": {
+        "bill_amount": "40.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "XX999",
+        "currency": "CNY",
+        "source_row_id": "B06",
+        "waybill_no": "WB-SIM-0006"
+      }
+    },
+    {
+      "file_line": 8,
+      "source_row_id": "B07",
+      "source_row_sha256": "8f4ac9710f611713bfd5c69c31c5a2b93f39611921779cc1cb287051c2a683b8",
+      "values": {
+        "bill_amount": "90.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B07",
+        "waybill_no": "WB-SIM-0007"
+      }
+    },
+    {
+      "file_line": 9,
+      "source_row_id": "B08",
+      "source_row_sha256": "55370bd7bf26048f0e9caca4a3998926a977d8188d7c5f8ff00e44a72eb0e0be",
+      "values": {
+        "bill_amount": "100.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B08",
+        "waybill_no": "WB-SIM-0008"
+      }
+    },
+    {
+      "file_line": 10,
+      "source_row_id": "B09",
+      "source_row_sha256": "690bc0ea9fee6e6184123d71b0bcc92b37921c96ec5a6eeac62496ebe2887835",
+      "values": {
+        "bill_amount": "1.01",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B09",
+        "waybill_no": "WB-SIM-0009"
+      }
+    },
+    {
+      "file_line": 11,
+      "source_row_id": "B10",
+      "source_row_sha256": "9ac5248b0f08e32d86a23201c6f50966dc5dbd3b04846dc38fbf21d289ff606d",
+      "values": {
+        "bill_amount": "1.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B10",
+        "waybill_no": "WB-SIM-0010"
+      }
+    },
+    {
+      "file_line": 12,
+      "source_row_id": "B11",
+      "source_row_sha256": "4af889bedf31b9b899ca4c3c6df995718fde8fde6907c26060c07bbb5edfa1c4",
+      "values": {
+        "bill_amount": "80.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B11",
+        "waybill_no": "WB-SIM-0011"
+      }
+    },
+    {
+      "file_line": 13,
+      "source_row_id": "B12",
+      "source_row_sha256": "af3f5cec0c59b21ea0cfd3cb55309ee62c0f7740ea25d823336241d7e90eaeea",
+      "values": {
+        "bill_amount": "50.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B12",
+        "waybill_no": "WB-SIM-0012"
+      }
+    },
+    {
+      "file_line": 14,
+      "source_row_id": "B13",
+      "source_row_sha256": "2cd63c74082245bae7cc0cf43682daa5f1fa19b63a98a36d1a892a849c244e88",
+      "values": {
+        "bill_amount": "70.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B13",
+        "waybill_no": ""
+      }
+    },
+    {
+      "file_line": 15,
+      "source_row_id": "B14",
+      "source_row_sha256": "29ea34e74ddd0a703875080a166168beab9e7eae6595889a86f164d9a4634731",
+      "values": {
+        "bill_amount": "11.02",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "SX001",
+        "currency": "CNY",
+        "source_row_id": "B14",
+        "waybill_no": "WB-SIM-0014"
+      }
+    },
+    {
+      "file_line": 16,
+      "source_row_id": "B15",
+      "source_row_sha256": "228f69a13614515eb95a39b12a2ef469939bacfed4d554a7c8b9736d934dcd33",
+      "values": {
+        "bill_amount": "80.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "B15",
+        "waybill_no": "WB-SIM-0015"
+      }
+    },
+    {
+      "file_line": 17,
+      "source_row_id": "B16",
+      "source_row_sha256": "13e0ce190823cd43e8beb45349a6826808999a4e3bb596242b154c8f220574a3",
+      "values": {
+        "bill_amount": "10.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FS001",
+        "currency": "CNY",
+        "source_row_id": "B16",
+        "waybill_no": "WB-SIM-0015"
+      }
+    }
+  ],
+  "transform_log": []
+}

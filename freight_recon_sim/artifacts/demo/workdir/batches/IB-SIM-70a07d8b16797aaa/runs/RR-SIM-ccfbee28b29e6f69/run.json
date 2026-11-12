@@ -1,0 +1,9 @@
+{
+  "batch_status": "整批阻断，不得输出通过",
+  "import_batch_id": "IB-SIM-70a07d8b16797aaa",
+  "mapping_hash": "b8e67a500c40b892329d908da0a33e8f6036029db7f40ce3dbea78b677f0ec24",
+  "reconcile_run_id": "RR-SIM-ccfbee28b29e6f69",
+  "results_sha256": "e085d799ccc0509d17c06b20148b757b873ddcad61822086e5bf0ee883977c2e",
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_version": "RV-SIM-2026-11-12-A"
+}
