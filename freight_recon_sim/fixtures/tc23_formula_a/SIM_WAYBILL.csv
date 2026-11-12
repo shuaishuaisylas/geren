@@ -1,0 +1,2 @@
+source_row_id,waybill_no,charge_code,unit_price,chargeable_weight,surcharge_rate,remark
+WE01,WB-SIM-0302,FR001,5.00,10.000,,

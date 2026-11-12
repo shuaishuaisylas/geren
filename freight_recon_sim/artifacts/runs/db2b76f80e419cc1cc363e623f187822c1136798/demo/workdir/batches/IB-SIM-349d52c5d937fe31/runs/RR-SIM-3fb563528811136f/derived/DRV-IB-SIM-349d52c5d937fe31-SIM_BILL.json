@@ -1,0 +1,26 @@
+{
+  "derived_copy_id": "DRV-IB-SIM-349d52c5d937fe31-SIM_BILL",
+  "derived_version": "v1",
+  "lineage": {
+    "import_batch_id": "IB-SIM-349d52c5d937fe31",
+    "source_file_sha256": "23d09431619e891b20442facde833ad10c37d1664d9a386064116ed7807133d8",
+    "source_table": "SIM_BILL"
+  },
+  "note": "派生副本：仅在此副本上规范化；源文件只读未改写；敏感字段不进入派生副本。",
+  "rows": [
+    {
+      "file_line": 2,
+      "source_row_id": "L2",
+      "source_row_sha256": "cd4a3cb174603e3f73977f8d110070fd5ad7d9a76f4386dca723dce21468c354",
+      "values": {
+        "bill_amount": "50.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "chargeable_weight": "10.000",
+        "currency": "CNY",
+        "waybill_no": "WB-SIM-0101"
+      }
+    }
+  ],
+  "transform_log": []
+}

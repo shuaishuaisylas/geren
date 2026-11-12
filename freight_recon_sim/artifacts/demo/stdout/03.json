@@ -1,0 +1,74 @@
+{
+  "column_presence_under_system_proposal": {
+    "SIM_BILL": {
+      "missing_columns": [],
+      "present": [
+        "waybill_no",
+        "charge_code",
+        "billing_period",
+        "bill_amount",
+        "currency"
+      ],
+      "required": [
+        "waybill_no",
+        "charge_code",
+        "billing_period",
+        "bill_amount",
+        "currency"
+      ]
+    },
+    "SIM_WAYBILL": {
+      "missing_columns": [],
+      "present": [
+        "waybill_no",
+        "charge_code",
+        "unit_price",
+        "chargeable_weight",
+        "surcharge_rate"
+      ],
+      "required": [
+        "waybill_no",
+        "charge_code",
+        "unit_price",
+        "chargeable_weight",
+        "surcharge_rate"
+      ]
+    }
+  },
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+  "mapping_proposals": [
+    {
+      "ambiguous_columns": {
+        "SIM_BILL": {},
+        "SIM_WAYBILL": {}
+      },
+      "mapping_hash": "1bea3da63687d243a1815fb1648f999dbc77df500db68f73ca949c92e0d2b60c",
+      "mapping_id": "MP-1bea3da63687d243",
+      "mapping_status": "proposed",
+      "proposed_by": "system header dictionary ENG-SIM-ALIAS-2026-11-12-A",
+      "tables": {
+        "SIM_BILL": {
+          "bill_amount": "bill_amount",
+          "billing_period": "billing_period",
+          "charge_code": "charge_code",
+          "currency": "currency",
+          "remark": "remark",
+          "source_row_id": "source_row_id",
+          "waybill_no": "waybill_no"
+        },
+        "SIM_WAYBILL": {
+          "charge_code": "charge_code",
+          "chargeable_weight": "chargeable_weight",
+          "remark": "remark",
+          "source_row_id": "source_row_id",
+          "surcharge_rate": "surcharge_rate",
+          "unit_price": "unit_price",
+          "waybill_no": "waybill_no"
+        }
+      }
+    }
+  ],
+  "note": "映射建议仅为 proposed；未经人工确认不得进入自动匹配与计算（FR-MAP / MAP-001）。列存在性为预览（按目录全部规则输入计）；以确认映射后核对时按本批实际收费项判定为准。",
+  "validation_status": "proposals_only_mapping_unconfirmed"
+}

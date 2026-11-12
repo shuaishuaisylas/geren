@@ -1,0 +1,15 @@
+{
+  "code": "MAP-001",
+  "detail": "未提供已确认映射的 mapping_hash",
+  "gate_record": {
+    "auto_match_executed": false,
+    "calculation_executed": false,
+    "code": "MAP-001",
+    "detail": "未提供已确认映射的 mapping_hash",
+    "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+    "pass_export_possible": false,
+    "requested_mapping_hash": ""
+  },
+  "meaning": "字段映射未人工确认或 mapping_hash 不一致，拒绝进入自动核对",
+  "status": "refused"
+}

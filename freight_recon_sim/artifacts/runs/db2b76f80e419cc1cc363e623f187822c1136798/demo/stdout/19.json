@@ -1,0 +1,44 @@
+{
+  "file_digests": [
+    {
+      "bytes": 170,
+      "file_sha256": "c461438c0ed4e01d787b2ef94f41256f8020a54bfc99bef9351dfb1eca43e9df",
+      "rows": 2,
+      "source_table": "SIM_BILL"
+    },
+    {
+      "bytes": 151,
+      "file_sha256": "77fdad804ce18a1771967a7b0f36563744c2aa562e5ed79305ef58730ff8edad",
+      "rows": 2,
+      "source_table": "SIM_WAYBILL"
+    }
+  ],
+  "headers": {
+    "SIM_BILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "bill_amount",
+      "billing_period",
+      "currency",
+      "remark"
+    ],
+    "SIM_WAYBILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "unit_price",
+      "chargeable_weight",
+      "surcharge_rate",
+      "remark"
+    ]
+  },
+  "idempotency_key": "DEMO-TC21A",
+  "import_batch_id": "IB-SIM-85f56d4a5653b08d",
+  "ingest_status": "accepted",
+  "input_bundle_sha256": "26d32fffeda557cad554f189d65c7b68740aebbedbffe958da0dc86f358f7190",
+  "replayed": false,
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_catalog_status": "present",
+  "rule_snapshot_status": "present"
+}

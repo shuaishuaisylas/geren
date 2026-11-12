@@ -1,0 +1,61 @@
+{
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "declared_delimiter": "comma",
+  "declared_encoding": "UTF-8",
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "file_digests": [
+    {
+      "bytes": 170,
+      "file_sha256": "c461438c0ed4e01d787b2ef94f41256f8020a54bfc99bef9351dfb1eca43e9df",
+      "rows": 2,
+      "source_table": "SIM_BILL"
+    },
+    {
+      "bytes": 151,
+      "file_sha256": "77fdad804ce18a1771967a7b0f36563744c2aa562e5ed79305ef58730ff8edad",
+      "rows": 2,
+      "source_table": "SIM_WAYBILL"
+    }
+  ],
+  "headers": {
+    "SIM_BILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "bill_amount",
+      "billing_period",
+      "currency",
+      "remark"
+    ],
+    "SIM_WAYBILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "unit_price",
+      "chargeable_weight",
+      "surcharge_rate",
+      "remark"
+    ]
+  },
+  "idempotency_key": "DEMO-TC21A",
+  "import_batch_id": "IB-SIM-85f56d4a5653b08d",
+  "imported_at": "2026-11-12T12:07:28+08:00",
+  "ingest_status": "accepted",
+  "input_bundle_sha256": "26d32fffeda557cad554f189d65c7b68740aebbedbffe958da0dc86f358f7190",
+  "row_digests": {
+    "SIM_BILL": [
+      "df5b78729b5633fbd716a1d06602ef5fe5435071f4d1d9605504a266f3fc3921",
+      "1818bde9875100aa886cb35004e21976f1f20f12109274214cba549dbd4005fb"
+    ],
+    "SIM_WAYBILL": [
+      "c84e35cfde12c345c07fa9167a60e65eee67bb164f3495c385b041351ae08747",
+      "7083393da6ee9a076fb4e754ff65881bab9c37186d51110e331e93e93b1938c7"
+    ]
+  },
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_catalog_status": "present",
+  "rule_snapshot_file_sha256": "366c7a82be79a3ae31fd35f0cf039ab95cba53be4909a80fe64601f2dada6b1f",
+  "rule_snapshot_status": "present",
+  "source_declared_desensitized": true
+}

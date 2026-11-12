@@ -1,0 +1,16 @@
+{
+  "batch_status": "已完成模拟核对（结果仅为候选，须人工复核）",
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "evidence_pack_sha256": "11559d91f77607bd6ccd4f0b4fe12919dac9d2b07a0ccd551a83d740c6c25d25",
+  "export_id": "EX-SIM-1772f3eaf0058596",
+  "format": "csv",
+  "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "item_count": 18,
+  "pass_candidate_count": 5,
+  "path": "batches/IB-SIM-93b8e7e7d3e246ad/exports/EX-SIM-1772f3eaf0058596/evidence.csv",
+  "reconcile_run_id": "RR-SIM-caaeb0affdceb56c",
+  "redaction_applied": true,
+  "redaction_profile": "shareable",
+  "replayed": false
+}

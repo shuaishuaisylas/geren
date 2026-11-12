@@ -1,0 +1,46 @@
+{
+  "catalog_label": "SIMULATED NEGATIVE FIXTURE - 仅 TC-23 反例测试用，非生产规则",
+  "currency": "CNY",
+  "rule_version": "RV-SIM-NEG-TC23B",
+  "rules": [
+    {
+      "approval_status": "模拟约定（反例夹具，仅测试用）",
+      "base_amount_def": "不适用",
+      "charge_code": "FR001",
+      "charge_name": "模拟基础运费",
+      "currency": "CNY",
+      "effective_from": null,
+      "effective_to": null,
+      "evidence_required": [
+        "source_row_id",
+        "inputs",
+        "formula_id",
+        "intermediates",
+        "rounding",
+        "output_amount"
+      ],
+      "formula_expr": "SIM-EXPR-NOT-EVAL",
+      "formula_id": "(1)",
+      "required_inputs": [
+        "P",
+        "W"
+      ],
+      "rounding_layer": "仅对行最终金额舍入一次；中间值不舍入；重量不再次舍入",
+      "rounding_mode": "ROUND_HALF_UP",
+      "rounding_scale": 2,
+      "rule_id": "SIM-R-FR001",
+      "rule_version": "RV-SIM-NEG-TC23B",
+      "scope_desc": "待业务确认；模拟目录不限定其他适用维度",
+      "superseded_by": null,
+      "tax_included_flag": "不含税（模拟）",
+      "tolerance_abs": "0.00",
+      "tolerance_type": "绝对额（模拟）"
+    }
+  ],
+  "source_documents": [
+    "TPL-BIZ-FIELD-RULE-2026-11-12-A",
+    "PRD-FREIGHT-RECON-2026-11-12-A",
+    "EVAL-TD-BASELINE-2026-11-12-R1"
+  ],
+  "tax_included_flag": "不含税（模拟约定，未填写任何税率）"
+}

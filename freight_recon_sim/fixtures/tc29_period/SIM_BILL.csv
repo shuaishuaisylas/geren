@@ -1,0 +1,3 @@
+source_row_id,waybill_no,charge_code,bill_amount,billing_period,currency,remark
+Q01,WB-SIM-0502,FR001,50.00,UNK-PERIOD,CNY,
+Q02,WB-SIM-0503,FR001,60.00,UNK-PERIOD,CNY,

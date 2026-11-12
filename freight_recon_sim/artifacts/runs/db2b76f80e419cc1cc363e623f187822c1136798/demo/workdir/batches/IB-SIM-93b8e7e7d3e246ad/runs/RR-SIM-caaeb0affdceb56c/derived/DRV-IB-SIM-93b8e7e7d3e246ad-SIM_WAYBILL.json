@@ -1,0 +1,221 @@
+{
+  "derived_copy_id": "DRV-IB-SIM-93b8e7e7d3e246ad-SIM_WAYBILL",
+  "derived_version": "v1",
+  "lineage": {
+    "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+    "source_file_sha256": "ec186aa275bb8000cd7f82f92c25acf44ec008fa31da4a6694f7f3ea441c1ab1",
+    "source_table": "SIM_WAYBILL"
+  },
+  "note": "派生副本：仅在此副本上规范化；源文件只读未改写；敏感字段不进入派生副本。",
+  "rows": [
+    {
+      "file_line": 2,
+      "source_row_id": "W01",
+      "source_row_sha256": "4fc5b59ef3f504d805a9f455551615d3079e21896c0e7f4097ef32e924649b94",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "25.100",
+        "source_row_id": "W01",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0001"
+      }
+    },
+    {
+      "file_line": 3,
+      "source_row_id": "W02",
+      "source_row_sha256": "9dbfcfbcbdc3fc3e4287319a822cac120cea167a2d1110800c6e18b65060018c",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "16.000",
+        "source_row_id": "W02",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0002"
+      }
+    },
+    {
+      "file_line": 4,
+      "source_row_id": "W03",
+      "source_row_sha256": "ff4b66f3c66a03e903033154365281d722701181e7b833c802b981a877a898ab",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "10.000",
+        "source_row_id": "W03",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0004"
+      }
+    },
+    {
+      "file_line": 5,
+      "source_row_id": "W04",
+      "source_row_sha256": "25fd4ec22302413bfdd733a6bc699f03c460ac237e9f1d11d38750cbb61e87c8",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "25.100",
+        "source_row_id": "W04",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0005"
+      }
+    },
+    {
+      "file_line": 6,
+      "source_row_id": "W05",
+      "source_row_sha256": "8611cdd80f20d4101e68f1988bffa0dbc79b44bae5022142fda993e65c2721b7",
+      "values": {
+        "charge_code": "XX999",
+        "chargeable_weight": "8.000",
+        "source_row_id": "W05",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0006"
+      }
+    },
+    {
+      "file_line": 7,
+      "source_row_id": "W06",
+      "source_row_sha256": "ad961f69259ca547980bfe92c9f4bd07dbacc2bf5d1f82e9188c542d2d6b9230",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "",
+        "source_row_id": "W06",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0007"
+      }
+    },
+    {
+      "file_line": 8,
+      "source_row_id": "W07",
+      "source_row_sha256": "9433e9e7ec4b5e1f55bbf948afa5772508fd045f9a47f19daed4ebfe9f0a952d",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "20.000",
+        "source_row_id": "W07",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0008"
+      }
+    },
+    {
+      "file_line": 9,
+      "source_row_id": "W08",
+      "source_row_sha256": "d8c4f85c6a9ad37a7003b496f911b8ebe3486b1c7788590bb79cb18c088d823e",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "18.000",
+        "source_row_id": "W08",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0008"
+      }
+    },
+    {
+      "file_line": 10,
+      "source_row_id": "W09",
+      "source_row_sha256": "c66f19c54c4a3075847848f4bbecf2213a5325135af8fda066a97a93a81ad40c",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "1.500",
+        "source_row_id": "W09",
+        "surcharge_rate": "",
+        "unit_price": "0.67",
+        "waybill_no": "WB-SIM-0009"
+      }
+    },
+    {
+      "file_line": 11,
+      "source_row_id": "W10",
+      "source_row_sha256": "912c3a4546beab8c70643477537e33a72c8d80a3347fc15d08ee61d9f361c786",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "1.500",
+        "source_row_id": "W10",
+        "surcharge_rate": "",
+        "unit_price": "0.67",
+        "waybill_no": "WB-SIM-0010"
+      }
+    },
+    {
+      "file_line": 12,
+      "source_row_id": "W11",
+      "source_row_sha256": "504f8e87e1c08de9d7c9c85f86bfba4eeaba929c24d660ac254f7c8c005e6a23",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "10.000",
+        "source_row_id": "W11",
+        "surcharge_rate": "",
+        "unit_price": "7.50",
+        "waybill_no": "WB-SIM-0011"
+      }
+    },
+    {
+      "file_line": 13,
+      "source_row_id": "W12",
+      "source_row_sha256": "a71904b35d61835ac1614e2f195a1b6ac1dbf66fda1c0b6688c2b7acbf0407d4",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "10.000",
+        "source_row_id": "W12",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0012"
+      }
+    },
+    {
+      "file_line": 14,
+      "source_row_id": "W13",
+      "source_row_sha256": "d811a5c6f90d7685d74c2ad4d83ffd0b15e3cbfd8ed6abb08586b711c9775193",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "14.000",
+        "source_row_id": "W13",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0013"
+      }
+    },
+    {
+      "file_line": 15,
+      "source_row_id": "W14",
+      "source_row_sha256": "54e863d4eac100e8f048b8cb5b2bd92cd3e077bfbd01c6f540a93086e3072744",
+      "values": {
+        "charge_code": "SX001",
+        "chargeable_weight": "3.010",
+        "source_row_id": "W14",
+        "surcharge_rate": "0.10",
+        "unit_price": "3.33",
+        "waybill_no": "WB-SIM-0014"
+      }
+    },
+    {
+      "file_line": 16,
+      "source_row_id": "W15",
+      "source_row_sha256": "7d7ac29980c733609a202a70b88538a25bfd19ea68af496ba06c3b43d612f8f3",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "20.000",
+        "source_row_id": "W15",
+        "surcharge_rate": "",
+        "unit_price": "4.00",
+        "waybill_no": "WB-SIM-0015"
+      }
+    },
+    {
+      "file_line": 17,
+      "source_row_id": "W16",
+      "source_row_sha256": "5a32fa64b6d3c81d02c3b86169b9c248cde4d63a053ef3152bd2a05b42e079e4",
+      "values": {
+        "charge_code": "FS001",
+        "chargeable_weight": "",
+        "source_row_id": "W16",
+        "surcharge_rate": "0.125",
+        "unit_price": "",
+        "waybill_no": "WB-SIM-0015"
+      }
+    }
+  ],
+  "transform_log": []
+}

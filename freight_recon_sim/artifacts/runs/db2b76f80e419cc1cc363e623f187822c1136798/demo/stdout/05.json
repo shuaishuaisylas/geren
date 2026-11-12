@@ -1,0 +1,10 @@
+{
+  "confirmation_label": "模拟确认记录（SIM- 前缀，非真实人员）",
+  "confirmed_at": "2026-11-12T12:00:00+08:00",
+  "confirmed_by": "SIM-USER-MAP-A",
+  "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+  "mapping_hash": "1735e6b1131c04de5b359ac1b1ac982058222f98550d66a68fa9d5d436daa0db",
+  "mapping_id": "MC-1735e6b1131c04de",
+  "mapping_status": "confirmed",
+  "mapping_version": "MAP-SIM-2026-11-12-01"
+}

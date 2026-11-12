@@ -1,0 +1,1 @@
+{"action":"ledger:post","block_reason":"超出对账范围","code":"OOS-001","committed":0,"decision":"rejected","isolation":"本地隔离 mock，未连接财务、银行或任何外部系统","mock":"SIM-MOCK-LEDGER","paid":0,"posted":0,"request_note_masked":"<masked len=6 sha256:92ee8bba959b>","transferred":0,"ts":"2026-11-12T11:58:11+08:00","written":0}

@@ -1,0 +1,19 @@
+{
+  "candidate_id": "MAP-CAND-SIM-01",
+  "proposed_by": "AI（离线候选，模拟，未确认）",
+  "tables": {
+    "SIM_BILL": {
+      "账单金额（元）": "bill_amount",
+      "账期": "billing_period",
+      "费用代码": "charge_code",
+      "运单编号": "waybill_no",
+      "重量": "chargeable_weight"
+    },
+    "SIM_WAYBILL": {
+      "单价": "unit_price",
+      "费用代码": "charge_code",
+      "运单编号": "waybill_no",
+      "重量": "chargeable_weight"
+    }
+  }
+}

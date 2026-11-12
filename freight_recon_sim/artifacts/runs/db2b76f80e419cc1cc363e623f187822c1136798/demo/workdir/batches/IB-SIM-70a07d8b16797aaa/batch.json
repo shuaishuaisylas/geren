@@ -1,0 +1,62 @@
+{
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "declared_delimiter": "comma",
+  "declared_encoding": "UTF-8",
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "file_digests": [
+    {
+      "bytes": 215,
+      "file_sha256": "3d8901fbfa11cb2cf14090ebde9c126ca953440633633e52befef9431725cd27",
+      "rows": 3,
+      "source_table": "SIM_BILL"
+    },
+    {
+      "bytes": 160,
+      "file_sha256": "c1672e80ed137e19af34a5ec5d640ca7fafc68bef0438e3196394fc254a824b3",
+      "rows": 3,
+      "source_table": "SIM_WAYBILL"
+    }
+  ],
+  "headers": {
+    "SIM_BILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "bill_amount",
+      "billing_period",
+      "currency",
+      "remark"
+    ],
+    "SIM_WAYBILL": [
+      "source_row_id",
+      "waybill_no",
+      "charge_code",
+      "unit_price",
+      "surcharge_rate",
+      "remark"
+    ]
+  },
+  "idempotency_key": "DEMO-TC20",
+  "import_batch_id": "IB-SIM-70a07d8b16797aaa",
+  "imported_at": "2026-11-12T12:07:27+08:00",
+  "ingest_status": "accepted",
+  "input_bundle_sha256": "c09aed8154764cb948958723bc56d76ee48d966c29d43bb95ccc2bf4a1f0e3b0",
+  "row_digests": {
+    "SIM_BILL": [
+      "2aee65e6dd8e2a2727fc30ba3dff5f3a1249e20a37cb5fb634d4f768b56afbc5",
+      "55a5d5a6da34ab4369c2d76532fbb8e585049b05353f7d89463b3923c8a0d24b",
+      "0a0328fa661c9aa417ff3e446637684f4377a6abd8d6ac60de296761677211b7"
+    ],
+    "SIM_WAYBILL": [
+      "de261c6dd092b39bad03eeabd94e5aad0a14740c5eb57aec893fa624d4570e5c",
+      "c7f8a3e1f72f204d7a3d34dc9cdf5ba88e8c427eb40c6db48acbfd3983334941",
+      "561f4cca400b95ab8d1be14caf4cce687a7178550f6b64ff7b55f3aaad9ae306"
+    ]
+  },
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_catalog_status": "present",
+  "rule_snapshot_file_sha256": "366c7a82be79a3ae31fd35f0cf039ab95cba53be4909a80fe64601f2dada6b1f",
+  "rule_snapshot_status": "present",
+  "source_declared_desensitized": true
+}

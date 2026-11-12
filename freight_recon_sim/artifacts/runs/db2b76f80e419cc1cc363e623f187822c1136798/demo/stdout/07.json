@@ -1,0 +1,31 @@
+{
+  "batch_block_codes": [],
+  "batch_status": "已完成模拟核对（结果仅为候选，须人工复核）",
+  "import_batch_id": "IB-SIM-93b8e7e7d3e246ad",
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "reconcile_run_id": "RR-SIM-caaeb0affdceb56c",
+  "replayed": true,
+  "results_path": "batches/IB-SIM-93b8e7e7d3e246ad/runs/RR-SIM-caaeb0affdceb56c/results.json",
+  "results_sha256": "95f40ba5a78709e2cd2cd35a48fc4cf1d94a7dbf4f921805388a5a3bf830c205",
+  "summary": {
+    "by_biz_status": {
+      "待人工确认": 4,
+      "核对通过候选": 5,
+      "漏计候选，须复核": 2,
+      "账单不通过，须复核": 7
+    },
+    "by_block_scope": {
+      "无": 5,
+      "行级": 13
+    },
+    "by_exception_candidate_type": {
+      "其他": 4,
+      "单据缺失候选": 1,
+      "无": 5,
+      "漏计候选": 2,
+      "重复计费候选": 2,
+      "金额不一致": 4
+    },
+    "total_items": 18
+  }
+}

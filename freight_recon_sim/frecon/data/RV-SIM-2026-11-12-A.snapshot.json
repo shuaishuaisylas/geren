@@ -1,0 +1,9 @@
+{
+  "approval_status": "模拟约定",
+  "catalog_file": "RV-SIM-2026-11-12-A.catalog.json",
+  "data_label": "SIMULATED - 冻结模拟规则快照，非生产规则",
+  "frozen_at": "2026-11-12T10:00:00+08:00",
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_snapshot_id": "SNAP-SIM-2026-11-12-A-001",
+  "rule_version": "RV-SIM-2026-11-12-A"
+}

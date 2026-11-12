@@ -1,0 +1,29 @@
+{
+  "block_scope": "批级",
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "error": {
+    "code": "IMP-005",
+    "detail": {
+      "detail": "检出 CSV 公式注入形态，未执行任何单元格",
+      "file_sha256": "4bbb35d9a65c697acc64204e8aa550f5e0ef82449228ff8cb84bdfac571d583a",
+      "findings": [
+        {
+          "column": "waybill_no",
+          "file_line": 2,
+          "prefix": "=",
+          "value_masked": "<masked len=16 sha256:656a24c34a38>"
+        }
+      ],
+      "source_table": "SIM_BILL"
+    },
+    "meaning": "检出 CSV 公式注入形态（=、+、@、非数值短横、制表/回车前缀），整批拒绝"
+  },
+  "file_sha256": {
+    "SIM_BILL": "4bbb35d9a65c697acc64204e8aa550f5e0ef82449228ff8cb84bdfac571d583a",
+    "SIM_WAYBILL": "176130a7ae3dfdce746a4f76041386fe63e1793734f9687460f463c2ccc8509a"
+  },
+  "idempotency_key": "DEMO-TC24",
+  "ingest_status": "rejected",
+  "reconcile_allowed": false,
+  "rejection_id": "IR-SIM-2d39efb9dd5ba726"
+}

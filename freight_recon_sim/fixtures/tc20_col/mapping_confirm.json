@@ -1,0 +1,22 @@
+{
+  "mapping_version": "MAP-SIM-2026-11-12-01",
+  "tables": {
+    "SIM_BILL": {
+      "bill_amount": "bill_amount",
+      "billing_period": "billing_period",
+      "charge_code": "charge_code",
+      "currency": "currency",
+      "remark": "remark",
+      "source_row_id": "source_row_id",
+      "waybill_no": "waybill_no"
+    },
+    "SIM_WAYBILL": {
+      "charge_code": "charge_code",
+      "remark": "remark",
+      "source_row_id": "source_row_id",
+      "surcharge_rate": "surcharge_rate",
+      "unit_price": "unit_price",
+      "waybill_no": "waybill_no"
+    }
+  }
+}

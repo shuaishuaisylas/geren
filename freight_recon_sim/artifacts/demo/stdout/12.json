@@ -1,0 +1,24 @@
+{
+  "batch_block_codes": [
+    "VAL-001"
+  ],
+  "batch_status": "整批阻断，不得输出通过",
+  "import_batch_id": "IB-SIM-70a07d8b16797aaa",
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "reconcile_run_id": "RR-SIM-ccfbee28b29e6f69",
+  "replayed": false,
+  "results_path": "batches/IB-SIM-70a07d8b16797aaa/runs/RR-SIM-ccfbee28b29e6f69/results.json",
+  "results_sha256": "e085d799ccc0509d17c06b20148b757b873ddcad61822086e5bf0ee883977c2e",
+  "summary": {
+    "by_biz_status": {
+      "待人工确认": 6
+    },
+    "by_block_scope": {
+      "批级": 6
+    },
+    "by_exception_candidate_type": {
+      "其他": 6
+    },
+    "total_items": 6
+  }
+}

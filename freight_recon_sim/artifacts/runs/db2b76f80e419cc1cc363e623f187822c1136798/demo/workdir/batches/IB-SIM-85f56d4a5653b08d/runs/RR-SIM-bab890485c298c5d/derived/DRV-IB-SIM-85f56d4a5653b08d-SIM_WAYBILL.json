@@ -1,0 +1,39 @@
+{
+  "derived_copy_id": "DRV-IB-SIM-85f56d4a5653b08d-SIM_WAYBILL",
+  "derived_version": "v1",
+  "lineage": {
+    "import_batch_id": "IB-SIM-85f56d4a5653b08d",
+    "source_file_sha256": "77fdad804ce18a1771967a7b0f36563744c2aa562e5ed79305ef58730ff8edad",
+    "source_table": "SIM_WAYBILL"
+  },
+  "note": "派生副本：仅在此副本上规范化；源文件只读未改写；敏感字段不进入派生副本。",
+  "rows": [
+    {
+      "file_line": 2,
+      "source_row_id": "FW01",
+      "source_row_sha256": "c84e35cfde12c345c07fa9167a60e65eee67bb164f3495c385b041351ae08747",
+      "values": {
+        "charge_code": "FR001",
+        "chargeable_weight": "",
+        "source_row_id": "FW01",
+        "surcharge_rate": "",
+        "unit_price": "5.00",
+        "waybill_no": "WB-SIM-0210"
+      }
+    },
+    {
+      "file_line": 3,
+      "source_row_id": "FW02",
+      "source_row_sha256": "7083393da6ee9a076fb4e754ff65881bab9c37186d51110e331e93e93b1938c7",
+      "values": {
+        "charge_code": "FS001",
+        "chargeable_weight": "",
+        "source_row_id": "FW02",
+        "surcharge_rate": "0.125",
+        "unit_price": "",
+        "waybill_no": "WB-SIM-0210"
+      }
+    }
+  ],
+  "transform_log": []
+}

@@ -1,0 +1,19 @@
+{
+  "mapping_version": "MAP-SIM-2026-11-12-01",
+  "tables": {
+    "SIM_BILL": {
+      "币种": "currency",
+      "账单金额（元）": "bill_amount",
+      "账期": "billing_period",
+      "费用代码": "charge_code",
+      "运单编号": "waybill_no",
+      "重量": "chargeable_weight"
+    },
+    "SIM_WAYBILL": {
+      "单价": "unit_price",
+      "费用代码": "charge_code",
+      "运单编号": "waybill_no",
+      "重量": "chargeable_weight"
+    }
+  }
+}

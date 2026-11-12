@@ -1,0 +1,39 @@
+{
+  "file_digests": [
+    {
+      "bytes": 105,
+      "file_sha256": "30eb7ab4e5a1acdf4bedb899cff0cb1ad5ed99116cd27cf4ddbf2b5333331561",
+      "rows": 1,
+      "source_table": "SIM_BILL"
+    },
+    {
+      "bytes": 70,
+      "file_sha256": "0a692aebd794b75c2d85bcc32e5951067eb431f89eb97aa901315db7882ce342",
+      "rows": 1,
+      "source_table": "SIM_WAYBILL"
+    }
+  ],
+  "headers": {
+    "SIM_BILL": [
+      "运单编号",
+      "费用代码",
+      "账单金额（元）",
+      "账期",
+      "重量"
+    ],
+    "SIM_WAYBILL": [
+      "运单编号",
+      "费用代码",
+      "单价",
+      "重量"
+    ]
+  },
+  "idempotency_key": "DEMO-TC16",
+  "import_batch_id": "IB-SIM-2e13fb62fe1eab5c",
+  "ingest_status": "accepted",
+  "input_bundle_sha256": "6ade59b8ace41f1e17aaee5e885cb70362b94979ba95e98119174551af272e44",
+  "replayed": false,
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_catalog_status": "present",
+  "rule_snapshot_status": "present"
+}
