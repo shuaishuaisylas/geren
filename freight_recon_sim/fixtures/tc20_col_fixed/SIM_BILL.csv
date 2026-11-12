@@ -1,0 +1,4 @@
+source_row_id,waybill_no,charge_code,bill_amount,billing_period,currency,remark
+C01,WB-SIM-0201,FR001,50.00,SIM-2026-10,CNY,
+C02,WB-SIM-0202,FR001,60.00,SIM-2026-10,CNY,
+C03,WB-SIM-0203,FR001,70.00,SIM-2026-10,CNY,

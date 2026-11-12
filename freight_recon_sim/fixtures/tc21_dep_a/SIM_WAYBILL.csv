@@ -1,0 +1,3 @@
+source_row_id,waybill_no,charge_code,unit_price,chargeable_weight,surcharge_rate,remark
+FW01,WB-SIM-0210,FR001,5.00,,,
+FW02,WB-SIM-0210,FS001,,,0.125,
