@@ -1,0 +1,54 @@
+{
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "declared_delimiter": "comma",
+  "declared_encoding": "UTF-8",
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "file_digests": [
+    {
+      "bytes": 105,
+      "file_sha256": "30eb7ab4e5a1acdf4bedb899cff0cb1ad5ed99116cd27cf4ddbf2b5333331561",
+      "rows": 1,
+      "source_table": "SIM_BILL"
+    },
+    {
+      "bytes": 70,
+      "file_sha256": "0a692aebd794b75c2d85bcc32e5951067eb431f89eb97aa901315db7882ce342",
+      "rows": 1,
+      "source_table": "SIM_WAYBILL"
+    }
+  ],
+  "headers": {
+    "SIM_BILL": [
+      "运单编号",
+      "费用代码",
+      "账单金额（元）",
+      "账期",
+      "重量"
+    ],
+    "SIM_WAYBILL": [
+      "运单编号",
+      "费用代码",
+      "单价",
+      "重量"
+    ]
+  },
+  "idempotency_key": "DEMO-TC16",
+  "import_batch_id": "IB-SIM-2e13fb62fe1eab5c",
+  "imported_at": "2026-11-12T12:07:28+08:00",
+  "ingest_status": "accepted",
+  "input_bundle_sha256": "6ade59b8ace41f1e17aaee5e885cb70362b94979ba95e98119174551af272e44",
+  "row_digests": {
+    "SIM_BILL": [
+      "3d13688b370aa9d07c2be081edf4bd424d023a1c13be847b519104537c812adf"
+    ],
+    "SIM_WAYBILL": [
+      "407754dd55abc280c24a88c0e8da28ad7143a1efd00cb66c926dbed151e01e52"
+    ]
+  },
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_catalog_status": "present",
+  "rule_snapshot_file_sha256": "366c7a82be79a3ae31fd35f0cf039ab95cba53be4909a80fe64601f2dada6b1f",
+  "rule_snapshot_status": "present",
+  "source_declared_desensitized": true
+}

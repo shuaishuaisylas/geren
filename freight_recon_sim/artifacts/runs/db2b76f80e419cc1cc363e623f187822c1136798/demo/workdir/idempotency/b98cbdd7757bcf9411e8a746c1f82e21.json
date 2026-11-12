@@ -1,0 +1,7 @@
+{
+  "idempotency_key": "DEMO-TC16-S1",
+  "import_batch_id": "IB-SIM-349d52c5d937fe31",
+  "input_bundle_sha256": "0c1af8428b90e56365b30014357d80cfa625598b57adf948a2ce7f42a13ceeba",
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_snapshot_file_sha256": "366c7a82be79a3ae31fd35f0cf039ab95cba53be4909a80fe64601f2dada6b1f"
+}

@@ -1,0 +1,138 @@
+{
+  "ai_explanation_status": "skipped",
+  "api_version": "recon.v1-design (offline CLI; not a deployed service)",
+  "batch_block_reasons": [],
+  "batch_status": "已完成模拟核对（结果仅为候选，须人工复核）",
+  "business_acceptance_status": "未启动（真实脱敏样本、业务金标、人工基线与阈值均未提供）",
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "derived_copies": {
+    "SIM_BILL": {
+      "derived_copy_id": "DRV-IB-SIM-349d52c5d937fe31-SIM_BILL",
+      "derived_sha256": "b922411e24a3334b335e905921dab21625d4034e3996267d0113892c02052c6d"
+    },
+    "SIM_WAYBILL": {
+      "derived_copy_id": "DRV-IB-SIM-349d52c5d937fe31-SIM_WAYBILL",
+      "derived_sha256": "f99448bddbd21a29a1e687c9fbf46f2405971d0bf97fbf1e9c1a6fb13fca9a65"
+    }
+  },
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "import_batch_id": "IB-SIM-349d52c5d937fe31",
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "input_bundle_sha256": "0c1af8428b90e56365b30014357d80cfa625598b57adf948a2ce7f42a13ceeba",
+  "items": [
+    {
+      "ai_explanation": null,
+      "ai_explanation_status": "skipped",
+      "approval_status": "模拟约定",
+      "base_amount_source": null,
+      "bill_amount": "50.00",
+      "billing_period": "SIM-2026-10",
+      "biz_status": "核对通过候选",
+      "block_reason": [],
+      "block_scope": "无",
+      "candidate_row_ids": [
+        "SIM_WAYBILL.L2"
+      ],
+      "candidates": [],
+      "charge_code": "FR001",
+      "completeness_flag": "本批双侧完整",
+      "currency": "CNY",
+      "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+      "diff_amount": "0.00",
+      "exception_candidate_type": "无",
+      "formula_id": "(1)",
+      "human_review_record": null,
+      "import_batch_id": "IB-SIM-349d52c5d937fe31",
+      "inputs": {
+        "P": {
+          "field": "unit_price",
+          "source": "SIM_WAYBILL.L2",
+          "value": "5.00"
+        },
+        "W": {
+          "field": "chargeable_weight",
+          "source": "SIM_WAYBILL.L2",
+          "value": "10.000"
+        }
+      },
+      "intermediates": {
+        "P×W": "50.00000"
+      },
+      "line_uid": "IB-SIM-349d52c5d937fe31:SIM_BILL:L2",
+      "match_cardinality": 1,
+      "match_key": "WB-SIM-0101|FR001",
+      "missing_fields": [],
+      "output_amount": "50.00",
+      "related_bill_row_ids": [],
+      "rounding_layer": "仅对行最终金额舍入一次；中间值不舍入；重量不再次舍入",
+      "rounding_mode": "ROUND_HALF_UP",
+      "rounding_scale": 2,
+      "rule_id": "SIM-R-FR001",
+      "rule_version": "RV-SIM-2026-11-12-A",
+      "source_row_id": "L2",
+      "source_row_sha256": "cd4a3cb174603e3f73977f8d110070fd5ad7d9a76f4386dca723dce21468c354",
+      "source_table": "SIM_BILL",
+      "tolerance_abs": "0.00",
+      "tolerance_type": "绝对额（模拟）",
+      "waybill_no": "WB-SIM-0101"
+    }
+  ],
+  "mapping": {
+    "confirmation_label": "模拟确认记录（SIM- 前缀，非真实人员）",
+    "confirmed_at": "2026-11-12T12:00:00+08:00",
+    "confirmed_by": "SIM-USER-MAP-A",
+    "mapping_hash": "1302eae84e0a30e5de8cd33205cb97566dfa034823359799c76ba48311131da8",
+    "mapping_id": "MC-1302eae84e0a30e5",
+    "mapping_version": "MAP-SIM-2026-11-12-01"
+  },
+  "reconcile_run_id": "RR-SIM-3fb563528811136f",
+  "references": {
+    "biz_template": "TPL-BIZ-FIELD-RULE-2026-11-12-A",
+    "eng_design": "TPL-ENG-RECON-DESIGN-2026-11-12-A (R2)",
+    "eval_baseline": "EVAL-TD-BASELINE-2026-11-12-R1",
+    "prd": "PRD-FREIGHT-RECON-2026-11-12-A"
+  },
+  "rule_snapshot": {
+    "approval_status": "模拟约定",
+    "catalog_status": "ok",
+    "frozen_at": "2026-11-12T10:00:00+08:00",
+    "requested_rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+    "requested_rule_version": "RV-SIM-2026-11-12-A",
+    "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+    "rule_snapshot_id": "SNAP-SIM-2026-11-12-A-001",
+    "rule_version": "RV-SIM-2026-11-12-A"
+  },
+  "side_effects": {
+    "ledger_posts": 0,
+    "network_calls": 0,
+    "payments": 0,
+    "source_files_written": 0
+  },
+  "source_integrity": {
+    "SIM_BILL": {
+      "file_sha256_at_import": "23d09431619e891b20442facde833ad10c37d1664d9a386064116ed7807133d8",
+      "file_sha256_at_run": "23d09431619e891b20442facde833ad10c37d1664d9a386064116ed7807133d8",
+      "file_unchanged": true,
+      "row_digests_unchanged": true
+    },
+    "SIM_WAYBILL": {
+      "file_sha256_at_import": "0a692aebd794b75c2d85bcc32e5951067eb431f89eb97aa901315db7882ce342",
+      "file_sha256_at_run": "0a692aebd794b75c2d85bcc32e5951067eb431f89eb97aa901315db7882ce342",
+      "file_unchanged": true,
+      "row_digests_unchanged": true
+    }
+  },
+  "summary": {
+    "by_biz_status": {
+      "核对通过候选": 1
+    },
+    "by_block_scope": {
+      "无": 1
+    },
+    "by_exception_candidate_type": {
+      "无": 1
+    },
+    "total_items": 1
+  }
+}

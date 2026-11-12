@@ -1,0 +1,39 @@
+{
+  "derived_copy_id": "DRV-IB-SIM-85f56d4a5653b08d-SIM_BILL",
+  "derived_version": "v1",
+  "lineage": {
+    "import_batch_id": "IB-SIM-85f56d4a5653b08d",
+    "source_file_sha256": "c461438c0ed4e01d787b2ef94f41256f8020a54bfc99bef9351dfb1eca43e9df",
+    "source_table": "SIM_BILL"
+  },
+  "note": "派生副本：仅在此副本上规范化；源文件只读未改写；敏感字段不进入派生副本。",
+  "rows": [
+    {
+      "file_line": 2,
+      "source_row_id": "F01",
+      "source_row_sha256": "df5b78729b5633fbd716a1d06602ef5fe5435071f4d1d9605504a266f3fc3921",
+      "values": {
+        "bill_amount": "90.00",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FR001",
+        "currency": "CNY",
+        "source_row_id": "F01",
+        "waybill_no": "WB-SIM-0210"
+      }
+    },
+    {
+      "file_line": 3,
+      "source_row_id": "F02",
+      "source_row_sha256": "1818bde9875100aa886cb35004e21976f1f20f12109274214cba549dbd4005fb",
+      "values": {
+        "bill_amount": "11.25",
+        "billing_period": "SIM-2026-10",
+        "charge_code": "FS001",
+        "currency": "CNY",
+        "source_row_id": "F02",
+        "waybill_no": "WB-SIM-0210"
+      }
+    }
+  ],
+  "transform_log": []
+}

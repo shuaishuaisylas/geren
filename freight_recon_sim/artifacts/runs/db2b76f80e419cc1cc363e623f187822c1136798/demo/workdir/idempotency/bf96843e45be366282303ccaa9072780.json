@@ -1,0 +1,7 @@
+{
+  "idempotency_key": "DEMO-TC20",
+  "import_batch_id": "IB-SIM-70a07d8b16797aaa",
+  "input_bundle_sha256": "c09aed8154764cb948958723bc56d76ee48d966c29d43bb95ccc2bf4a1f0e3b0",
+  "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+  "rule_snapshot_file_sha256": "366c7a82be79a3ae31fd35f0cf039ab95cba53be4909a80fe64601f2dada6b1f"
+}

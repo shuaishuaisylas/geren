@@ -1,0 +1,191 @@
+{
+  "ai_explanation_status": "skipped",
+  "api_version": "recon.v1-design (offline CLI; not a deployed service)",
+  "batch_block_reasons": [
+    {
+      "code": "VAL-001",
+      "detail": {
+        "missing_columns": {
+          "SIM_BILL": [
+            "currency"
+          ]
+        },
+        "note": "整列不存在；禁止默认值填补、禁止零差异"
+      },
+      "meaning": "必填列整列不存在"
+    }
+  ],
+  "batch_status": "整批阻断，不得输出通过",
+  "business_acceptance_status": "未启动（真实脱敏样本、业务金标、人工基线与阈值均未提供）",
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "derived_copies": {
+    "SIM_BILL": {
+      "derived_copy_id": "DRV-IB-SIM-2e13fb62fe1eab5c-SIM_BILL",
+      "derived_sha256": "42365d9818770e8fb84c4173c9c81afad203b06c2bb5545f240b43ba144bdab3"
+    },
+    "SIM_WAYBILL": {
+      "derived_copy_id": "DRV-IB-SIM-2e13fb62fe1eab5c-SIM_WAYBILL",
+      "derived_sha256": "87b66826443df2d0925ba3ce18b39bb6865df6029e00a0d5b50f8b4b67f579be"
+    }
+  },
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "import_batch_id": "IB-SIM-2e13fb62fe1eab5c",
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "input_bundle_sha256": "6ade59b8ace41f1e17aaee5e885cb70362b94979ba95e98119174551af272e44",
+  "items": [
+    {
+      "ai_explanation": null,
+      "ai_explanation_status": "skipped",
+      "bill_amount": "50.00",
+      "billing_period": "SIM-2026-10",
+      "biz_status": "待人工确认",
+      "block_reason": [
+        {
+          "code": "VAL-001",
+          "detail": {
+            "missing_columns": {
+              "SIM_BILL": [
+                "currency"
+              ]
+            },
+            "note": "整列不存在；禁止默认值填补、禁止零差异"
+          },
+          "meaning": "必填列整列不存在"
+        }
+      ],
+      "block_scope": "批级",
+      "candidate_row_ids": [],
+      "charge_code": "FR001",
+      "completeness_flag": "未评估（批级阻断）",
+      "currency": null,
+      "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+      "diff_amount": null,
+      "exception_candidate_type": "其他",
+      "formula_id": null,
+      "human_review_record": null,
+      "import_batch_id": "IB-SIM-2e13fb62fe1eab5c",
+      "inputs": {},
+      "intermediates": {},
+      "line_uid": "IB-SIM-2e13fb62fe1eab5c:SIM_BILL:L2",
+      "match_cardinality": 0,
+      "match_key": null,
+      "missing_fields": [],
+      "output_amount": null,
+      "rounding_layer": null,
+      "rounding_mode": null,
+      "rounding_scale": null,
+      "rule_id": null,
+      "rule_version": "RV-SIM-2026-11-12-A",
+      "source_row_id": "L2",
+      "source_row_sha256": "3d13688b370aa9d07c2be081edf4bd424d023a1c13be847b519104537c812adf",
+      "source_table": "SIM_BILL",
+      "waybill_no": "WB-SIM-0101"
+    },
+    {
+      "ai_explanation": null,
+      "ai_explanation_status": "skipped",
+      "bill_amount": null,
+      "billing_period": null,
+      "biz_status": "待人工确认",
+      "block_reason": [
+        {
+          "code": "VAL-001",
+          "detail": {
+            "missing_columns": {
+              "SIM_BILL": [
+                "currency"
+              ]
+            },
+            "note": "整列不存在；禁止默认值填补、禁止零差异"
+          },
+          "meaning": "必填列整列不存在"
+        }
+      ],
+      "block_scope": "批级",
+      "candidate_row_ids": [],
+      "charge_code": "FR001",
+      "completeness_flag": "未评估（批级阻断）",
+      "currency": null,
+      "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+      "diff_amount": null,
+      "exception_candidate_type": "其他",
+      "formula_id": null,
+      "human_review_record": null,
+      "import_batch_id": "IB-SIM-2e13fb62fe1eab5c",
+      "inputs": {},
+      "intermediates": {},
+      "line_uid": "IB-SIM-2e13fb62fe1eab5c:SIM_WAYBILL:L2",
+      "match_cardinality": 0,
+      "match_key": null,
+      "missing_fields": [],
+      "output_amount": null,
+      "rounding_layer": null,
+      "rounding_mode": null,
+      "rounding_scale": null,
+      "rule_id": null,
+      "rule_version": "RV-SIM-2026-11-12-A",
+      "source_row_id": "L2",
+      "source_row_sha256": "407754dd55abc280c24a88c0e8da28ad7143a1efd00cb66c926dbed151e01e52",
+      "source_table": "SIM_WAYBILL",
+      "waybill_no": "WB-SIM-0101"
+    }
+  ],
+  "mapping": {
+    "confirmation_label": "模拟确认记录（SIM- 前缀，非真实人员）",
+    "confirmed_at": "2026-11-12T12:00:00+08:00",
+    "confirmed_by": "SIM-USER-MAP-A",
+    "mapping_hash": "6cca9f3364b4a0e5d4adafa79eaecab056c78d7d7e2982fed42af267f5f2f947",
+    "mapping_id": "MC-6cca9f3364b4a0e5",
+    "mapping_version": "MAP-SIM-2026-11-12-01"
+  },
+  "reconcile_run_id": "RR-SIM-936640ae4072c60c",
+  "references": {
+    "biz_template": "TPL-BIZ-FIELD-RULE-2026-11-12-A",
+    "eng_design": "TPL-ENG-RECON-DESIGN-2026-11-12-A (R2)",
+    "eval_baseline": "EVAL-TD-BASELINE-2026-11-12-R1",
+    "prd": "PRD-FREIGHT-RECON-2026-11-12-A"
+  },
+  "rule_snapshot": {
+    "approval_status": "模拟约定",
+    "catalog_status": "ok",
+    "frozen_at": "2026-11-12T10:00:00+08:00",
+    "requested_rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+    "requested_rule_version": "RV-SIM-2026-11-12-A",
+    "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+    "rule_snapshot_id": "SNAP-SIM-2026-11-12-A-001",
+    "rule_version": "RV-SIM-2026-11-12-A"
+  },
+  "side_effects": {
+    "ledger_posts": 0,
+    "network_calls": 0,
+    "payments": 0,
+    "source_files_written": 0
+  },
+  "source_integrity": {
+    "SIM_BILL": {
+      "file_sha256_at_import": "30eb7ab4e5a1acdf4bedb899cff0cb1ad5ed99116cd27cf4ddbf2b5333331561",
+      "file_sha256_at_run": "30eb7ab4e5a1acdf4bedb899cff0cb1ad5ed99116cd27cf4ddbf2b5333331561",
+      "file_unchanged": true,
+      "row_digests_unchanged": true
+    },
+    "SIM_WAYBILL": {
+      "file_sha256_at_import": "0a692aebd794b75c2d85bcc32e5951067eb431f89eb97aa901315db7882ce342",
+      "file_sha256_at_run": "0a692aebd794b75c2d85bcc32e5951067eb431f89eb97aa901315db7882ce342",
+      "file_unchanged": true,
+      "row_digests_unchanged": true
+    }
+  },
+  "summary": {
+    "by_biz_status": {
+      "待人工确认": 2
+    },
+    "by_block_scope": {
+      "批级": 2
+    },
+    "by_exception_candidate_type": {
+      "其他": 2
+    },
+    "total_items": 2
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "ai_explanation_status": "skipped",
+  "api_version": "recon.v1-design (offline CLI; not a deployed service)",
+  "batch_block_reasons": [],
+  "batch_status": "已完成模拟核对（结果仅为候选，须人工复核）",
+  "business_acceptance_status": "未启动（真实脱敏样本、业务金标、人工基线与阈值均未提供）",
+  "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+  "derived_copies": {
+    "SIM_BILL": {
+      "derived_copy_id": "DRV-IB-SIM-85f56d4a5653b08d-SIM_BILL",
+      "derived_sha256": "04f5ab7170dfd24c59ada9171560f41adfbf3f42348479bb2da7b98b50334e98"
+    },
+    "SIM_WAYBILL": {
+      "derived_copy_id": "DRV-IB-SIM-85f56d4a5653b08d-SIM_WAYBILL",
+      "derived_sha256": "a62534e44ee5c16402dbefe0eb070bdc9fe59836aa24222b590b8e85bc6a9d81"
+    }
+  },
+  "eng_sim_version": "ENG-SIM-2026-11-12-A",
+  "engine_version": "0.1.0",
+  "import_batch_id": "IB-SIM-85f56d4a5653b08d",
+  "independent_eval_status": "未执行（EVAL-TD-BASELINE-2026-11-12-R1 独立评测尚未执行；研发自测不等于独立验收）",
+  "input_bundle_sha256": "26d32fffeda557cad554f189d65c7b68740aebbedbffe958da0dc86f358f7190",
+  "items": [
+    {
+      "ai_explanation": null,
+      "ai_explanation_status": "skipped",
+      "approval_status": "模拟约定",
+      "base_amount_source": null,
+      "bill_amount": "90.00",
+      "billing_period": "SIM-2026-10",
+      "biz_status": "待人工确认",
+      "block_reason": [
+        {
+          "code": "CAL-002",
+          "detail": "SIM_WAYBILL.FW01 缺少规则必填输入 ['chargeable_weight']；禁止替算或用账单额反推",
+          "meaning": "必填输入缺失"
+        }
+      ],
+      "block_scope": "行级",
+      "candidate_row_ids": [
+        "SIM_WAYBILL.FW01"
+      ],
+      "candidates": [],
+      "charge_code": "FR001",
+      "completeness_flag": "缺规则输入",
+      "currency": "CNY",
+      "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+      "diff_amount": null,
+      "exception_candidate_type": "其他",
+      "formula_id": "(1)",
+      "human_review_record": null,
+      "import_batch_id": "IB-SIM-85f56d4a5653b08d",
+      "inputs": {
+        "P": {
+          "field": "unit_price",
+          "source": "SIM_WAYBILL.FW01",
+          "value": "5.00"
+        },
+        "W": {
+          "field": "chargeable_weight",
+          "source": "SIM_WAYBILL.FW01",
+          "status": "缺失",
+          "value": null
+        }
+      },
+      "intermediates": {},
+      "line_uid": "IB-SIM-85f56d4a5653b08d:SIM_BILL:F01",
+      "match_cardinality": 1,
+      "match_key": "WB-SIM-0210|FR001",
+      "missing_fields": [
+        "chargeable_weight"
+      ],
+      "output_amount": null,
+      "related_bill_row_ids": [],
+      "rounding_layer": "仅对行最终金额舍入一次；中间值不舍入；重量不再次舍入",
+      "rounding_mode": "ROUND_HALF_UP",
+      "rounding_scale": 2,
+      "rule_id": "SIM-R-FR001",
+      "rule_version": "RV-SIM-2026-11-12-A",
+      "source_row_id": "F01",
+      "source_row_sha256": "df5b78729b5633fbd716a1d06602ef5fe5435071f4d1d9605504a266f3fc3921",
+      "source_table": "SIM_BILL",
+      "tolerance_abs": "0.00",
+      "tolerance_type": "绝对额（模拟）",
+      "waybill_no": "WB-SIM-0210"
+    },
+    {
+      "ai_explanation": null,
+      "ai_explanation_status": "skipped",
+      "approval_status": "模拟约定",
+      "base_amount_source": null,
+      "bill_amount": "11.25",
+      "billing_period": "SIM-2026-10",
+      "biz_status": "待人工确认",
+      "block_reason": [
+        {
+          "code": "CAL-003",
+          "detail": "基础行 SIM_WAYBILL.FW01 无法计算已舍入金额",
+          "meaning": "附加费基数不可用"
+        }
+      ],
+      "block_scope": "行级",
+      "candidate_row_ids": [
+        "SIM_WAYBILL.FW02"
+      ],
+      "candidates": [],
+      "charge_code": "FS001",
+      "completeness_flag": "缺规则输入",
+      "currency": "CNY",
+      "data_label": "SIMULATED - 模拟数据与模拟规则，非德邦真实业务结果，非业务验收",
+      "diff_amount": null,
+      "exception_candidate_type": "其他",
+      "formula_id": "(2)",
+      "human_review_record": null,
+      "import_batch_id": "IB-SIM-85f56d4a5653b08d",
+      "inputs": {
+        "A_FR001": {
+          "source": "SIM_WAYBILL.FW01",
+          "status": "不可用",
+          "value": null
+        },
+        "R": {
+          "field": "surcharge_rate",
+          "source": "SIM_WAYBILL.FW02",
+          "value": "0.125"
+        }
+      },
+      "intermediates": {},
+      "line_uid": "IB-SIM-85f56d4a5653b08d:SIM_BILL:F02",
+      "match_cardinality": 1,
+      "match_key": "WB-SIM-0210|FS001",
+      "missing_fields": [
+        "A_FR001"
+      ],
+      "output_amount": null,
+      "related_bill_row_ids": [],
+      "rounding_layer": "仅对行最终金额舍入一次；中间值不舍入",
+      "rounding_mode": "ROUND_HALF_UP",
+      "rounding_scale": 2,
+      "rule_id": "SIM-R-FS001",
+      "rule_version": "RV-SIM-2026-11-12-A",
+      "source_row_id": "F02",
+      "source_row_sha256": "1818bde9875100aa886cb35004e21976f1f20f12109274214cba549dbd4005fb",
+      "source_table": "SIM_BILL",
+      "tolerance_abs": "0.00",
+      "tolerance_type": "绝对额（模拟）",
+      "waybill_no": "WB-SIM-0210"
+    }
+  ],
+  "mapping": {
+    "confirmation_label": "模拟确认记录（SIM- 前缀，非真实人员）",
+    "confirmed_at": "2026-11-12T12:00:00+08:00",
+    "confirmed_by": "SIM-USER-MAP-A",
+    "mapping_hash": "4762c269c9dfeb3f7a46b33ed8a6c6c4940cc318b028b3e519b468ef3201465c",
+    "mapping_id": "MC-4762c269c9dfeb3f",
+    "mapping_version": "MAP-SIM-2026-11-12-01"
+  },
+  "reconcile_run_id": "RR-SIM-bab890485c298c5d",
+  "references": {
+    "biz_template": "TPL-BIZ-FIELD-RULE-2026-11-12-A",
+    "eng_design": "TPL-ENG-RECON-DESIGN-2026-11-12-A (R2)",
+    "eval_baseline": "EVAL-TD-BASELINE-2026-11-12-R1",
+    "prd": "PRD-FREIGHT-RECON-2026-11-12-A"
+  },
+  "rule_snapshot": {
+    "approval_status": "模拟约定",
+    "catalog_status": "ok",
+    "frozen_at": "2026-11-12T10:00:00+08:00",
+    "requested_rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+    "requested_rule_version": "RV-SIM-2026-11-12-A",
+    "rule_catalog_sha256": "d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43",
+    "rule_snapshot_id": "SNAP-SIM-2026-11-12-A-001",
+    "rule_version": "RV-SIM-2026-11-12-A"
+  },
+  "side_effects": {
+    "ledger_posts": 0,
+    "network_calls": 0,
+    "payments": 0,
+    "source_files_written": 0
+  },
+  "source_integrity": {
+    "SIM_BILL": {
+      "file_sha256_at_import": "c461438c0ed4e01d787b2ef94f41256f8020a54bfc99bef9351dfb1eca43e9df",
+      "file_sha256_at_run": "c461438c0ed4e01d787b2ef94f41256f8020a54bfc99bef9351dfb1eca43e9df",
+      "file_unchanged": true,
+      "row_digests_unchanged": true
+    },
+    "SIM_WAYBILL": {
+      "file_sha256_at_import": "77fdad804ce18a1771967a7b0f36563744c2aa562e5ed79305ef58730ff8edad",
+      "file_sha256_at_run": "77fdad804ce18a1771967a7b0f36563744c2aa562e5ed79305ef58730ff8edad",
+      "file_unchanged": true,
+      "row_digests_unchanged": true
+    }
+  },
+  "summary": {
+    "by_biz_status": {
+      "待人工确认": 2
+    },
+    "by_block_scope": {
+      "行级": 2
+    },
+    "by_exception_candidate_type": {
+      "其他": 2
+    },
+    "total_items": 2
+  }
+}

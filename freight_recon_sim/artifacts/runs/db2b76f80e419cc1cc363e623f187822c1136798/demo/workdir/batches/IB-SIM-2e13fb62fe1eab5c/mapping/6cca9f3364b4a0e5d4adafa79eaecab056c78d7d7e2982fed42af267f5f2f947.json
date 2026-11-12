@@ -1,0 +1,40 @@
+{
+  "confirmation_label": "模拟确认记录（SIM- 前缀，非真实人员）",
+  "confirmed_at": "2026-11-12T12:00:00+08:00",
+  "confirmed_by": "SIM-USER-MAP-A",
+  "headers": {
+    "SIM_BILL": [
+      "运单编号",
+      "费用代码",
+      "账单金额（元）",
+      "账期",
+      "重量"
+    ],
+    "SIM_WAYBILL": [
+      "运单编号",
+      "费用代码",
+      "单价",
+      "重量"
+    ]
+  },
+  "import_batch_id": "IB-SIM-2e13fb62fe1eab5c",
+  "mapping_hash": "6cca9f3364b4a0e5d4adafa79eaecab056c78d7d7e2982fed42af267f5f2f947",
+  "mapping_id": "MC-6cca9f3364b4a0e5",
+  "mapping_status": "confirmed",
+  "mapping_version": "MAP-SIM-2026-11-12-01",
+  "tables": {
+    "SIM_BILL": {
+      "账单金额（元）": "bill_amount",
+      "账期": "billing_period",
+      "费用代码": "charge_code",
+      "运单编号": "waybill_no",
+      "重量": "chargeable_weight"
+    },
+    "SIM_WAYBILL": {
+      "单价": "unit_price",
+      "费用代码": "charge_code",
+      "运单编号": "waybill_no",
+      "重量": "chargeable_weight"
+    }
+  }
+}

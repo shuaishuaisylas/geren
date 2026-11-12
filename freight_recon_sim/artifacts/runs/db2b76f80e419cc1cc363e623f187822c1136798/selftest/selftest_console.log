@@ -1,0 +1,81 @@
+# command: python3 tests/run_selftest.py --out artifacts/runs/db2b76f80e419cc1cc363e623f187822c1136798/selftest
+# commit under test: db2b76f80e419cc1cc363e623f187822c1136798
+# started: 2026-11-12T12:07:20+08:00
+test_TC_01_exact_unique_match_consistent (test_eval_baseline_tc01_15.MainBatch.test_TC_01_exact_unique_match_consistent) ... ok
+test_TC_02_bill_side_duplicate (test_eval_baseline_tc01_15.MainBatch.test_TC_02_bill_side_duplicate) ... ok
+test_TC_03_bill_without_waybill (test_eval_baseline_tc01_15.MainBatch.test_TC_03_bill_without_waybill) ... ok
+test_TC_04_waybill_without_bill (test_eval_baseline_tc01_15.MainBatch.test_TC_04_waybill_without_bill) ... ok
+test_TC_05_amount_mismatch (test_eval_baseline_tc01_15.MainBatch.test_TC_05_amount_mismatch) ... ok
+test_TC_06_rule_missing_no_fallback (test_eval_baseline_tc01_15.MainBatch.test_TC_06_rule_missing_no_fallback) ... ok
+test_TC_07_missing_chargeable_weight (test_eval_baseline_tc01_15.MainBatch.test_TC_07_missing_chargeable_weight) ... ok
+test_TC_08_multiple_waybill_candidates (test_eval_baseline_tc01_15.MainBatch.test_TC_08_multiple_waybill_candidates) ... ok
+test_TC_09_rounding_boundary_consistent (test_eval_baseline_tc01_15.MainBatch.test_TC_09_rounding_boundary_consistent) ... ok
+test_TC_10_rounding_boundary_truncated_bill (test_eval_baseline_tc01_15.MainBatch.test_TC_10_rounding_boundary_truncated_bill) ... ok
+test_TC_11_evidence_chain_complete (test_eval_baseline_tc01_15.MainBatch.test_TC_11_evidence_chain_complete) ... ok
+test_TC_12_sensitive_output_suppressed (test_eval_baseline_tc01_15.MainBatch.test_TC_12_sensitive_output_suppressed) ... ok
+test_TC_13_missing_waybill_no_no_fuzzy_match (test_eval_baseline_tc01_15.MainBatch.test_TC_13_missing_waybill_no_no_fuzzy_match) ... ok
+test_TC_14_single_final_rounding (test_eval_baseline_tc01_15.MainBatch.test_TC_14_single_final_rounding) ... ok
+test_TC_15_two_charges_same_waybill (test_eval_baseline_tc01_15.MainBatch.test_TC_15_two_charges_same_waybill) ... ok
+test_exports_have_no_pass_without_label (test_eval_baseline_tc01_15.MainBatch.test_exports_have_no_pass_without_label) ... ok
+test_pipeline_completed_row_level (test_eval_baseline_tc01_15.MainBatch.test_pipeline_completed_row_level) ... ok
+test_TC_16_A_ai_candidate_only_blocks (test_eval_baseline_tc16_29.TC16MappingGate.test_TC_16_A_ai_candidate_only_blocks) ... ok
+test_TC_16_B_confirmation_bound_to_person_time_version (test_eval_baseline_tc16_29.TC16MappingGate.test_TC_16_B_confirmation_bound_to_person_time_version) ... ok
+test_TC_16_C_changed_mapping_without_reconfirmation_blocks (test_eval_baseline_tc16_29.TC16MappingGate.test_TC_16_C_changed_mapping_without_reconfirmation_blocks) ... ok
+test_TC_17_source_files_untouched_derived_copy_only (test_eval_baseline_tc16_29.TC17ReadOnlySource.test_TC_17_source_files_untouched_derived_copy_only) ... ok
+test_TC_18_ledger_requests_refused (test_eval_baseline_tc16_29.TC18NoLedger.test_TC_18_ledger_requests_refused) ... ok
+test_TC_19_payment_requests_refused (test_eval_baseline_tc16_29.TC19NoPayment.test_TC_19_payment_requests_refused) ... ok
+test_TC_20_batch_block_then_reconfirm_and_rerun (test_eval_baseline_tc16_29.TC20WholeColumnMissing.test_TC_20_batch_block_then_reconfirm_and_rerun) ... ok
+test_TC_20_distinct_from_row_level_TC_07 (test_eval_baseline_tc16_29.TC20WholeColumnMissing.test_TC_20_distinct_from_row_level_TC_07) ... ok
+test_TC_21_A_base_unavailable (test_eval_baseline_tc16_29.TC21SurchargeDependency.test_TC_21_A_base_unavailable) ... ok
+test_TC_21_B_base_row_failed_surcharge_not_pass (test_eval_baseline_tc16_29.TC21SurchargeDependency.test_TC_21_B_base_row_failed_surcharge_not_pass) ... ok
+test_TC_22_delimiter_collision_no_split_no_cross_match (test_eval_baseline_tc16_29.TC22Delimiter.test_TC_22_delimiter_collision_no_split_no_cross_match) ... ok
+test_TC_23_A_unregistered_formula_id (test_eval_baseline_tc16_29.TC23NoEval.test_TC_23_A_unregistered_formula_id) ... ok
+test_TC_23_B_free_expression_refused (test_eval_baseline_tc16_29.TC23NoEval.test_TC_23_B_free_expression_refused) ... ok
+test_TC_23_static_no_dynamic_evaluation_in_engine (test_eval_baseline_tc16_29.TC23NoEval.test_TC_23_static_no_dynamic_evaluation_in_engine) ... ok
+test_TC_24_A_formula_prefixes_rejected (test_eval_baseline_tc16_29.TC24FormulaInjection.test_TC_24_A_formula_prefixes_rejected) ... ok
+test_TC_24_B_negative_amount_accepted (test_eval_baseline_tc16_29.TC24FormulaInjection.test_TC_24_B_negative_amount_accepted) ... ok
+test_TC_25_replay_same_and_reject_changed (test_eval_baseline_tc16_29.TC25Idempotency.test_TC_25_replay_same_and_reject_changed) ... ok
+test_TC_26_duplicate_and_multi_candidate (test_eval_baseline_tc16_29.TC26MultiErrorMerge.test_TC_26_duplicate_and_multi_candidate) ... ok
+test_TC_27_encoding_and_format_failures_distinct (test_eval_baseline_tc16_29.TC27EncodingFormat.test_TC_27_encoding_and_format_failures_distinct) ... ok
+test_TC_28_LOAD_malformed_catalog (test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_LOAD_malformed_catalog) ... ok
+test_TC_28_LOAD_missing_catalog (test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_LOAD_missing_catalog) ... ok
+test_TC_28_REC_002_requested_snapshot_mismatch (test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_REC_002_requested_snapshot_mismatch) ... ok
+test_TC_28_UNFROZEN_catalog_without_snapshot (test_eval_baseline_tc16_29.TC28Catalog.test_TC_28_UNFROZEN_catalog_without_snapshot) ... ok
+test_TC_29_unrecognised_batch_period (test_eval_baseline_tc16_29.TC29Period.test_TC_29_unrecognised_batch_period) ... ok
+test_TC_16_S1_adding_currency_only_removes_missing_column_obstacle (test_selfbuilt_prdchg_supplement.TC16Supplement.test_TC_16_S1_adding_currency_only_removes_missing_column_obstacle)
+DEC-SIM-C3-TC16: the added currency column only clears VAL-001; it proves no reconciliation success. ... ok
+test_TC_20_S1_imp004_only_for_unregistered_headers (test_selfbuilt_prdchg_supplement.TC20Supplement.test_TC_20_S1_imp004_only_for_unregistered_headers)
+DEC-SIM-C1-VAL001: IMP-004 = unregistered header only; a missing required column is not IMP-004. ... ok
+test_TC_21_S1_failed_base_never_overwritten_and_surcharge_never_passes (test_selfbuilt_prdchg_supplement.TC21Supplement.test_TC_21_S1_failed_base_never_overwritten_and_surcharge_never_passes)
+DEC-SIM-C6-CAL006: computable surcharge evidence kept, base failure kept, no pass candidate. ... ok
+test_TC_D01_swapped_delimiter_positions_never_collide (test_selfbuilt_tc_d01_d08.TC_D01_DelimiterCollision.test_TC_D01_swapped_delimiter_positions_never_collide) ... ok
+test_TC_D02_evaluable_looking_expression_is_never_evaluated (test_selfbuilt_tc_d01_d08.TC_D02_MaliciousFormula.test_TC_D02_evaluable_looking_expression_is_never_evaluated) ... ok
+test_TC_D02_non_simulated_approval_status_not_loaded (test_selfbuilt_tc_d01_d08.TC_D02_MaliciousFormula.test_TC_D02_non_simulated_approval_status_not_loaded) ... ok
+test_TC_D03_main_batch_csv_export_has_no_live_formula_cells (test_selfbuilt_tc_d01_d08.TC_D03_OutputInjection.test_TC_D03_main_batch_csv_export_has_no_live_formula_cells) ... ok
+test_TC_D03_rendered_csv_neutralises_formula_text (test_selfbuilt_tc_d01_d08.TC_D03_OutputInjection.test_TC_D03_rendered_csv_neutralises_formula_text) ... ok
+test_TC_D03_sanitize_cell (test_selfbuilt_tc_d01_d08.TC_D03_OutputInjection.test_TC_D03_sanitize_cell) ... ok
+test_TC_D04_reconcile_and_export_reruns_are_identical_and_not_rewritten (test_selfbuilt_tc_d01_d08.TC_D04_Rerun.test_TC_D04_reconcile_and_export_reruns_are_identical_and_not_rewritten) ... ok
+test_TC_D04_tampered_results_refused_on_export (test_selfbuilt_tc_d01_d08.TC_D04_Rerun.test_TC_D04_tampered_results_refused_on_export) ... ok
+test_TC_D05_bill_side_required_columns_missing (test_selfbuilt_tc_d01_d08.TC_D05_WholeColumnMissing.test_TC_D05_bill_side_required_columns_missing) ... ok
+test_TC_D05_single_empty_cell_stays_row_level (test_selfbuilt_tc_d01_d08.TC_D05_WholeColumnMissing.test_TC_D05_single_empty_cell_stays_row_level) ... ok
+test_TC_D06_combinations_keep_all_reasons (test_selfbuilt_tc_d01_d08.TC_D06_Priority.test_TC_D06_combinations_keep_all_reasons) ... ok
+test_TC_D07_base_not_unique_missing_or_unbilled (test_selfbuilt_tc_d01_d08.TC_D07_SurchargeDependency.test_TC_D07_base_not_unique_missing_or_unbilled) ... ok
+test_TC_D08_invalid_confirmations_refused (test_selfbuilt_tc_d01_d08.TC_D08_MappingUnconfirmed.test_TC_D08_invalid_confirmations_refused) ... ok
+test_TC_D08_reconcile_refused_without_confirmation (test_selfbuilt_tc_d01_d08.TC_D08_MappingUnconfirmed.test_TC_D08_reconcile_refused_without_confirmation) ... ok
+test_UNIT_desensitized_declaration_required (test_selfbuilt_units.CliContract.test_UNIT_desensitized_declaration_required) ... ok
+test_UNIT_fixture_manifest_hashes (test_selfbuilt_units.CliContract.test_UNIT_fixture_manifest_hashes) ... ok
+test_UNIT_frozen_snapshot_matches_catalog_bytes (test_selfbuilt_units.CliContract.test_UNIT_frozen_snapshot_matches_catalog_bytes) ... ok
+test_UNIT_info_and_usage_exit_codes (test_selfbuilt_units.CliContract.test_UNIT_info_and_usage_exit_codes) ... ok
+test_UNIT_log_is_whitelisted (test_selfbuilt_units.CliContract.test_UNIT_log_is_whitelisted) ... ok
+test_UNIT_half_up_and_exact_products (test_selfbuilt_units.DecimalUnits.test_UNIT_half_up_and_exact_products) ... ok
+test_UNIT_parse_decimal_rejects_non_plain_strings (test_selfbuilt_units.DecimalUnits.test_UNIT_parse_decimal_rejects_non_plain_strings) ... ok
+test_UNIT_results_contain_no_binary_floats (test_selfbuilt_units.DecimalUnits.test_UNIT_results_contain_no_binary_floats) ... ok
+test_UNIT_engine_has_no_network_or_external_service_imports (test_selfbuilt_units.GuardUnits.test_UNIT_engine_has_no_network_or_external_service_imports) ... ok
+test_UNIT_formula_prefix_boundary (test_selfbuilt_units.GuardUnits.test_UNIT_formula_prefix_boundary) ... ok
+test_UNIT_sensitive_guard_blocks_leak (test_selfbuilt_units.GuardUnits.test_UNIT_sensitive_guard_blocks_leak) ... ok
+
+----------------------------------------------------------------------
+Ran 69 tests in 7.209s
+
+OK
+# exit_code: 0
