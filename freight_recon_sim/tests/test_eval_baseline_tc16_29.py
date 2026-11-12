@@ -60,13 +60,11 @@ class TC16MappingGate(unittest.TestCase):
         self.assertEqual(code, C.EXIT_BATCH_BLOCKED)
         self.assertEqual(res["batch_block_reasons"][0]["code"], "VAL-001")
         self.assertEqual(res["batch_block_reasons"][0]["detail"]["missing_columns"], {"SIM_BILL": ["currency"]})
-
-    def test_TC_16_B_supplement_confirmed_mapping_reaches_reconcile(self):
-        pipe = Pipeline(self)
-        run = pipe.run_fixture("tc16_map_supplement")
-        self.assertEqual(run["exit"], 0)
-        it = item(run["results"], "L2", "SIM_BILL")
-        self.assertEqual((it["biz_status"], it["output_amount"]), (C.ST_PASS, "50.00"))
+        self.assertEqual(res["batch_status"], C.BATCH_BLOCKED)
+        self.assertTrue(all(i["block_scope"] == C.SCOPE_BATCH and i["output_amount"] is None
+                            for i in res["items"]))
+        code, exp = self.pipe.export(self.batch, rec["reconcile_run_id"], "json")
+        self.assertEqual((code, exp["pass_candidate_count"]), (0, 0))
 
     def test_TC_16_C_changed_mapping_without_reconfirmation_blocks(self):
         code, conf = self.pipe.confirm(self.batch, fx("tc16_map", "mapping_confirm.json"))
@@ -200,8 +198,15 @@ class TC20WholeColumnMissing(unittest.TestCase):
         pipe = Pipeline(self)
         run = pipe.run_fixture("tc20_col", key="IDEMP-TC20")
         self.assertEqual(run["exit"], C.EXIT_BATCH_BLOCKED)
+        self.assertEqual(run["import"]["ingest_status"], "accepted")
         res = run["results"]
         self.assertEqual(res["batch_status"], C.BATCH_BLOCKED)
+        self.assertEqual([r["code"] for r in res["batch_block_reasons"]], ["VAL-001"])
+        for it in res["items"]:
+            self.assertEqual([r["code"] for r in it["block_reason"]], ["VAL-001"])
+            self.assertRegex(it["source_row_sha256"], r"^[0-9a-f]{64}$")
+        self.assertEqual({i["source_row_id"] for i in res["items"]},
+                         {"C01", "C02", "C03", "CW01", "CW02", "CW03"})
         reason = res["batch_block_reasons"][0]
         self.assertEqual((reason["code"], reason["detail"]["missing_columns"]),
                          ("VAL-001", {"SIM_WAYBILL": ["chargeable_weight"]}))
@@ -250,13 +255,16 @@ class TC21SurchargeDependency(unittest.TestCase):
         res = Pipeline(self).run_fixture("tc21_dep_b")["results"]
         g01, g02 = item(res, "G01"), item(res, "G02")
         self.assertEqual((g01["biz_status"], g01["diff_amount"]), (C.ST_BILL_FAIL, "6.50"))
+        self.assertEqual((codes(g01), g01["output_amount"]), ({"CAL-005"}, "125.50"))
         self.assertEqual(g02["output_amount"], "15.69")
         self.assertEqual(g02["intermediates"], {"A_FR001×R": "15.68750"})
         self.assertEqual(g02["inputs"]["A_FR001"]["value"], "125.50")
         self.assertIn("SIM_WAYBILL.GW01", g02["base_amount_source"])
         self.assertNotEqual(g02["biz_status"], C.ST_PASS)
         self.assertEqual(g02["biz_status"], C.ST_PENDING)
-        self.assertIn("CAL-006", codes(g02))
+        self.assertEqual(codes(g02), {"CAL-006"})
+        self.assertEqual(g02["diff_amount"], "0.00")
+        self.assertEqual(missing_evidence(g02), [])
 
 
 class TC22Delimiter(unittest.TestCase):

@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 # CLI demo on SIMULATED fixtures. Records every real command, its exit code and stdout under
-# artifacts/demo. The confirmer SIM-USER-MAP-A is a simulated identity, not a real person.
+# artifacts/runs/<commit>/demo (never overwrites an earlier run; the b139d97 run is kept at artifacts/demo). The confirmer SIM-USER-MAP-A is a simulated identity, not a real person.
 set -u
 cd "$(dirname "$0")/.."
 export PYTHONDONTWRITEBYTECODE=1
-OUT=artifacts/demo
+REV="$(git rev-parse HEAD 2>/dev/null || echo unknown)"
+if [ -n "$(git status --porcelain -- . ':!artifacts' 2>/dev/null)" ]; then REV="${REV}-dirty"; fi
+OUT="artifacts/runs/${REV}/demo"
+if [ -e "$OUT" ]; then echo "refusing to overwrite existing $OUT" >&2; exit 1; fi
 WD="$OUT/workdir"
-if [ -d "$WD" ]; then chmod -R u+w "$WD"; fi
-rm -rf "$OUT"
 mkdir -p "$OUT/stdout"
 T="$OUT/transcript.md"
 RULE=RV-SIM-2026-11-12-A
@@ -18,7 +19,7 @@ n=0
 {
   echo "# CLI 演示记录（模拟数据，非真实业务结果）"
   echo
-  echo "- commit: $(git rev-parse HEAD 2>/dev/null || echo unknown)"
+  echo "- commit: $REV"
   echo "- started: $(TZ=Asia/Shanghai date --iso-8601=seconds)"
   echo "- python: $(python3 --version 2>&1)"
   echo
@@ -54,6 +55,18 @@ B20=$(field "['import_batch_id']")
 run "确认 TC-20 映射" confirm-mapping --workdir "$WD" --batch "$B20" --mapping fixtures/tc20_col/mapping_confirm.json "${CONFIRM[@]}"
 H20=$(field "['mapping_hash']")
 run "TC-20 核对 → 批级阻断 VAL-001" reconcile --workdir "$WD" --batch "$B20" --mapping-hash "$H20" --rule-version $RULE --rule-catalog-sha256 "$SHA"
+flow() {
+  local tag="$1" fixture="$2" key="$3"
+  run "$tag 导入 $fixture" import --workdir "$WD" --bill "fixtures/$fixture/SIM_BILL.csv" --waybill "fixtures/$fixture/SIM_WAYBILL.csv" --idempotency-key "$key" "${IMPORT_FLAGS[@]}"
+  local b; b=$(field "['import_batch_id']")
+  run "$tag 人工确认映射" confirm-mapping --workdir "$WD" --batch "$b" --mapping "fixtures/$fixture/mapping_confirm.json" "${CONFIRM[@]}"
+  local h; h=$(field "['mapping_hash']")
+  run "$tag 核对" reconcile --workdir "$WD" --batch "$b" --mapping-hash "$h" --rule-version $RULE --rule-catalog-sha256 "$SHA"
+}
+flow "TC-16 原夹具（期望 VAL-001，退出码 2）" tc16_map DEMO-TC16
+flow "TC-16-S1 补充夹具（仅消除缺列障碍）" tc16_map_supplement DEMO-TC16-S1
+flow "TC-21 阶段 A（期望 CAL-003，output 空）" tc21_dep_a DEMO-TC21A
+flow "TC-21 阶段 B（期望 FR001 CAL-005 + FS001 CAL-006）" tc21_dep_b DEMO-TC21B
 run "TC-24 公式注入导入 → IMP-005" import --workdir "$WD" --bill fixtures/tc24_inj_eq/SIM_BILL.csv --waybill fixtures/tc24_inj_eq/SIM_WAYBILL.csv --idempotency-key DEMO-TC24 "${IMPORT_FLAGS[@]}"
 run "TC-25 基线导入" import --workdir "$WD" --bill fixtures/tc25_idem/SIM_BILL.csv --waybill fixtures/tc25_idem/SIM_WAYBILL.csv --idempotency-key IDEMP-SIM-0305 "${IMPORT_FLAGS[@]}"
 run "TC-25 同键不同内容 → IMP-007" import --workdir "$WD" --bill fixtures/tc25_idem_changed/SIM_BILL.csv --waybill fixtures/tc25_idem_changed/SIM_WAYBILL.csv --idempotency-key IDEMP-SIM-0305 "${IMPORT_FLAGS[@]}"

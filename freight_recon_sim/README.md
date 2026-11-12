@@ -8,7 +8,8 @@
 
 | 项 | 值 |
 |---|---|
-| 原型引擎 `frecon` | `0.1.0` |
+| 原型引擎 `frecon` | `0.1.0`（交付修订 r2 未改引擎逻辑；结果哈希与 b139d97 一致，见第 13 节） |
+| 交付修订 | r1 = 提交 `b139d97f791a723f253bbe000c177c0236854971`；r2 = PRD-CHG-2026-11-12-A 对齐（测试分类、补充用例、文档、脚本），被测提交见 `artifacts/runs/` |
 | 工程模拟约定 | `ENG-SIM-2026-11-12-A`（表头别名字典 `ENG-SIM-ALIAS-2026-11-12-A`） |
 | 冻结模拟规则 | `RV-SIM-2026-11-12-A`，快照 `SNAP-SIM-2026-11-12-A-001`，目录 SHA-256 `d2a45c286a811211840c9d8f64baddf908ccdb76de6f8265cf6c76b73000cb43` |
 | 评测基线 | `EVAL-TD-BASELINE-2026-11-12-R1`（29 条，TC-01–TC-29，取代此前 15/21 条快照） |
@@ -30,7 +31,7 @@
 cd freight_recon_sim
 python3 -m frecon info                 # 版本与引用
 python3 -m frecon --help               # 全部子命令
-bash scripts/demo.sh                   # 端到端 CLI 演示，输出到 artifacts/demo/
+bash scripts/demo.sh                   # 端到端 CLI 演示，输出到 artifacts/runs/<commit>/demo/（不覆盖旧记录）
 ```
 
 ### 3.1 最小只读流程（与 R2 接口一一对应）
@@ -62,7 +63,7 @@ python3 -m frecon permissions --workdir $WD
 ## 4. 测试命令
 
 ```bash
-bash scripts/run_selftest.sh           # 全量自测，写 artifacts/selftest/{selftest_console.log,selftest_report.json,selftest_matrix.md}
+bash scripts/run_selftest.sh           # 全量自测，写 artifacts/runs/<commit>/selftest/（目录已存在则拒绝覆盖）
 python3 tests/run_selftest.py --out /tmp/selftest   # 同上，不写入仓库
 cd tests && python3 -m unittest -v     # 纯 unittest
 python3 scripts/build_fixtures.py      # 重新生成夹具与快照（确定性；MANIFEST.json 记录哈希）
@@ -75,9 +76,10 @@ python3 scripts/build_fixtures.py      # 重新生成夹具与快照（确定性
 | `tests/test_eval_baseline_tc01_15.py` | 基线用例研发自测 | 原 TC-01–TC-15，保留原编号 |
 | `tests/test_eval_baseline_tc16_29.py` | 基线用例研发自测 | TC-16–TC-29，保留原编号；多阶段用例拆为 `_A/_B/_C` |
 | `tests/test_selfbuilt_tc_d01_d08.py` | **自建补测** | R2 设计 TC-D01–TC-D08，非基线、不计入独立评测 |
+| `tests/test_selfbuilt_prdchg_supplement.py` | **补充用例** | 按 PRD-CHG-2026-11-12-A 拆分单列：TC-16-S1、TC-20-S1、TC-21-S1；非冻结基线，是否纳入评测由评测负责人登记 |
 | `tests/test_selfbuilt_units.py` | 自建单元/边界 | 十进制解析、舍入、守卫、日志白名单、夹具哈希 |
 
-用例 ↔ 测试映射、每条的自测结果与独立评测状态见 `artifacts/selftest/selftest_matrix.md`。基线用例全部通过 CLI（子进程或进程内调用同一 `main`）驱动，评测方可用相同夹具与命令独立复测。
+用例 ↔ 测试映射、每条的自测结果与独立评测状态见各次运行的 `selftest_matrix.md`（索引见 `artifacts/README.md`）。基线用例全部通过 CLI（子进程或进程内调用同一 `main`）驱动，评测方可用相同夹具与命令独立复测。
 
 ## 5. 模拟数据（`fixtures/`，全部 SIMULATED）
 
@@ -85,7 +87,7 @@ python3 scripts/build_fixtures.py      # 重新生成夹具与快照（确定性
 |---|---|---|
 | `main/` | TC-01–TC-15 | B01–B16 / W01–W16 逐条取自基线源表；TC-12 模拟占位符放在 `remark` 列 |
 | `tc16_map/` | TC-16 | 中文表头按基线原文；含 AI 候选 `MAP-CAND-SIM-01` 与人工确认文件 |
-| `tc16_map_supplement/` | TC-16（自建补充） | 账单表头补“币种”列，证明确认后可进入核对（见冲突 C3） |
+| `tc16_map_supplement/` | TC-16-S1（补充用例） | 账单表头补“币种”列，**仅验证可消除 VAL-001 缺列障碍，不代表核对成功**（DEC-SIM-C3-TC16） |
 | `tc17_ro/` | TC-17 | 运单号左侧空格，规范化仅在派生副本 |
 | `tc18_ledger/`, `tc19_pay/` | TC-18/19 | remark 含模拟诱导语（不被解释、不输出） |
 | `tc20_col/`, `tc20_col_fixed/` | TC-20 | 整列缺 `chargeable_weight` / 补列后重确认重跑 |
@@ -139,12 +141,12 @@ python3 scripts/build_fixtures.py      # 重新生成夹具与快照（确定性
 
 | # | 冲突/缺口 | 来源 | 本原型处理 |
 |---|---|---|---|
-| C1 | R2 `IMP-004` 含“缺少白名单必填列”（导入即拒）vs 业务模板/PRD/R2 `VAL-001`/基线 TC-20（批级阻断但保留已解析行） | R2 内部 | 以模板+PRD+基线为准：必填列整列缺失在核对时记 VAL-001；IMP-004 只用于未登记表头 |
+| C1 | R2 `IMP-004` 含“缺少白名单必填列”（导入即拒）vs 业务模板/PRD/R2 `VAL-001`/基线 TC-20（批级阻断但保留已解析行） | R2 内部 | 已由产品裁决 DEC-SIM-C1-VAL001 确认：必填列整列缺失记 VAL-001；IMP-004 只用于未登记表头 |
 | C2 | R2“未登记列拒绝整批”vs 基线 TC-12/18/19/24 在源行注入备注类文本；业务模板字段字典无备注字段 | 模板 vs 基线 | ENG-SIM 增登记敏感字段 `remark`（不参与计算、不输出） |
-| C3 | 基线 TC-16 账单表头无“币种”vs 模板“currency 模拟必填” | 基线 vs 模板 | 按原文夹具：确认后通过映射门禁但触发 VAL-001（缺 currency）；另建补充夹具（加“币种”）证明可进入核对 |
+| C3 | 基线 TC-16 账单表头无“币种”vs 模板“currency 模拟必填” | 基线 vs 模板 | 已由产品裁决 DEC-SIM-C3-TC16：原夹具确认映射后仍 VAL-001 批阻断；补充用例 TC-16-S1（加“币种”）仅消除缺列障碍，不表述为核对成功 |
 | C4 | 基线 TC-16 未给 MW01 重量值；TC-20 修复后、TC-29 运单 W 值未给 | 基线 | ENG-SIM 夹具假设（10.000 等），在 MANIFEST.json 标注 |
 | C5 | R2 `IMP-005` “行或批”；基线 TC-24 主状态为整批阻断 | R2 vs 基线 | 取整批拒绝（更严格，基线允许） |
-| C6 | TC-21 阶段 B：R2 只写“FS001 不得自动判通过候选”，未定状态与代码 | R2/基线 | ENG-SIM：`待人工确认` + 新码 `CAL-006` |
+| C6 | TC-21 阶段 B：R2 只写“FS001 不得自动判通过候选”，未定状态与代码 | R2/基线 | ENG-SIM：`待人工确认` + 新码 `CAL-006`；产品裁决 DEC-SIM-C6-CAL006 认可为模拟原型暂定安全状态，非业务定论 |
 | C7 | 模板 `completeness_flag` 枚举无批级阻断值 | 模板 | ENG-SIM 值 `未评估（批级阻断）` |
 | C8 | 基线状态“应拒绝，无副作用”“整批阻断，不得输出通过”不属模板四值 | 基线 vs 模板 | 作为批级/拒绝结果（`batch_status`、退出码、拒绝记录），行级仍只用四值 |
 | C9 | TC-17 行哈希算法与派生副本格式未定；基线 `simsha256:*` 为占位 | 基线 | 文件字节 SHA-256；行哈希=原始单元格列表规范 JSON 的 SHA-256；派生副本 `DRV-<batch>-<table>` v1 |
@@ -176,5 +178,20 @@ python3 scripts/build_fixtures.py      # 重新生成夹具与快照（确定性
 
 ## 12. 产出物（`artifacts/`，模拟、已脱敏）
 
-- `artifacts/selftest/`：`selftest_console.log`（真实命令、逐测试输出、退出码）、`selftest_report.json`、`selftest_matrix.md`。
-- `artifacts/demo/`：`transcript.md`（每条真实命令与退出码）、`stdout/*.json`、`workdir/`（批次记录、结果、派生副本、证据包、白名单日志、mock 日志；已删除 `inputs/` 源字节副本）。
+索引见 `artifacts/README.md`。旧记录不覆盖、不改写：
+
+- `artifacts/selftest/`、`artifacts/demo/`：r1，被测提交 `b139d97`（67 个测试）。其中 TC-16 计 4 个测试，含补币种夹具测试；该分类已按 DEC-SIM-C3-TC16 在 r2 改为补充用例单列，旧日志原样保留。
+- `artifacts/runs/<commit>/{selftest,demo}/`：r2 及以后各次运行，按被测提交完整 SHA 分目录。
+
+每个运行目录包含 `selftest_console.log`（真实命令、逐测试输出、退出码）、`selftest_report.json`、`selftest_matrix.md`，以及演示 `transcript.md`、`stdout/*.json`、`workdir/`（已删除 `inputs/` 源字节副本）。
+
+## 13. PRD-CHG-2026-11-12-A 产品三项裁决核查（研发自测，非独立评测）
+
+| 裁决 | 现状（r1 / b139d97 实现） | 研发自测证据 | r2 处理 |
+|---|---|---|---|
+| DEC-SIM-C3-TC16 | 原夹具：未确认即 MAP-001；确认后 VAL-001（缺 `SIM_BILL.currency`），整批阻断、退出码 2、无通过导出。符合 | `test_TC_16_A_*`、`test_TC_16_B_*`（r2 增断言：全部行批级、金额空、导出通过数 0） | **缺陷（测试分类与表述，非引擎）**：r1 把补币种夹具测试计入 TC-16，README 表述为“证明确认后可进入核对”。r2 拆为补充用例 TC-16-S1，只断言 VAL-001 消除、映射已绑定，不断言核对成功 |
+| DEC-SIM-C1-VAL001 | 整列缺失：导入 accepted，核对 VAL-001 批阻断，6 行全部保留源行哈希与原因，金额空，无通过。IMP-004 仅在 `parse_source` 中用于未登记表头。符合 | `test_TC_20_*`（r2 增断言：导入 accepted、每行仅 VAL-001、行哈希保留）；新 `test_TC_20_S1_*` | **测试缺口**：r1 无 IMP-004 专项测试。r2 新增 TC-20-S1：未登记表头→IMP-004 且不建批次；仅缺必填列→不触发 IMP-004 |
+| DEC-SIM-C6-CAL006 | 阶段 A：FS001 CAL-003、`output_amount=null`。阶段 B：FR001 保持“账单不通过”(CAL-005, 差 6.50)，FS001 保留可算证据（基数 125.50、中间值 15.68750、输出 15.69），状态“待人工确认”(CAL-006)，非通过候选。符合 | `test_TC_21_A_*`、`test_TC_21_B_*`（r2 增断言：G01 仅 CAL-005 未被覆盖，G02 仅 CAL-006、证据字段齐全）；新 `test_TC_21_S1_*`（附加费金额也不符时仍不通过、基础行不变） | 无代码修改；只补强断言 |
+
+结论：三项裁决在引擎行为上均已符合，引擎代码 `frecon/` 在 r2 未改动。r2 修正了一处测试分类与表述缺陷（C3），补了一处测试缺口（C1）。
+

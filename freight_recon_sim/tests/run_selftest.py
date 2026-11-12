@@ -22,6 +22,8 @@ sys.path.insert(0, ROOT)
 
 from frecon import conventions as C  # noqa: E402
 
+DELIVERY_REVISION = "frecon 0.1.0 / delivery r2（PRD-CHG-2026-11-12-A 对齐；引擎逻辑未变，仅测试分类、补测与文档）"
+
 BASELINE_CASES = {
     "TC-01": "正常一对一金额一致", "TC-02": "账单侧重复计费", "TC-03": "账单有、运单明细缺失",
     "TC-04": "运单明细有、账单缺失", "TC-05": "金额不一致", "TC-06": "规则缺失", "TC-07": "缺计费重量字段",
@@ -42,8 +44,18 @@ SELF_BUILT = {
 }
 
 
+SUPPLEMENTS = {
+    "TC-16-S1": ("补 currency 仅消除缺列障碍（DEC-SIM-C3-TC16）", "TC-16"),
+    "TC-20-S1": ("IMP-004 仅用于未登记表头（DEC-SIM-C1-VAL001）", "TC-20"),
+    "TC-21-S1": ("基础行失败不被覆盖、附加费不得通过（DEC-SIM-C6-CAL006）", "TC-21"),
+}
+
+
 def case_of(test_id):
     name = test_id.rsplit(".", 1)[-1]
+    m = re.match(r"test_TC_(\d\d)_S(\d)", name)
+    if m:
+        return f"TC-{m.group(1)}-S{m.group(2)}"
     m = re.match(r"test_TC_D(\d\d)", name)
     if m:
         return f"TC-D{m.group(1)}"
@@ -92,8 +104,10 @@ def summarise(records, cases, kind):
             selftest = "研发自测未通过"
         row = {"case": case_id, "scene": meta if isinstance(meta, str) else meta[0], "kind": kind,
                "tests": len(recs), "passed": passed, "failed": len(recs) - passed, "selftest_result": selftest,
-               "independent_eval_status": "未执行" if kind == "baseline" else "不适用（自建补测，非基线用例）"}
-        if kind == "self-built":
+               "independent_eval_status": {"baseline": "未执行",
+                                           "supplement": "未纳入（补充用例，是否纳入评测版本由评测负责人登记）"}.get(
+                   kind, "不适用（自建补测，非基线用例）")}
+        if kind in ("self-built", "supplement"):
             row["related_baseline_case"] = meta[1]
         rows.append(row)
     return rows
@@ -111,18 +125,19 @@ def main():
     records = result.records
     baseline = summarise(records, BASELINE_CASES, "baseline")
     built = summarise(records, SELF_BUILT, "self-built")
+    supp = summarise(records, SUPPLEMENTS, "supplement")
     totals = {o: sum(r["outcome"] == o for r in records) for o in ("pass", "fail", "error", "skipped")}
     report = {
         "title": "研发自测报告（非独立评测、非业务验收）",
         "generated_at": datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds"),
-        "engine_version": C.ENGINE_VERSION, "eng_sim_version": C.ENG_SIM_VERSION,
+        "delivery_revision": DELIVERY_REVISION, "engine_version": C.ENGINE_VERSION, "eng_sim_version": C.ENG_SIM_VERSION,
         "sim_rule_version": C.SIM_RULE_VERSION, "eval_baseline": C.EVAL_BASELINE_ID,
         "python": platform.python_version(), "platform": platform.platform(),
         "git_commit_under_test": os.environ.get("FRECON_GIT_COMMIT", "unknown"),
         "tests_run": result.testsRun, "totals": totals, "elapsed_seconds": elapsed,
         "independent_eval_status": C.INDEPENDENT_EVAL_STATUS,
         "business_acceptance_status": C.BUSINESS_ACCEPTANCE_STATUS,
-        "baseline_cases": baseline, "self_built_cases": built,
+        "baseline_cases": baseline, "self_built_cases": built, "supplement_cases": supp,
         "tests": [{k: v for k, v in r.items() if k != "detail" or v} for r in records],
     }
     os.makedirs(args.out, exist_ok=True)
@@ -131,6 +146,7 @@ def main():
     lines = [
         "# 研发自测用例矩阵（非独立评测、非业务验收）", "",
         f"- 基线：{C.EVAL_BASELINE_ID}（29 条，独立评测状态：**未执行**）",
+        f"- 交付修订：{DELIVERY_REVISION}",
         f"- 规则：{C.SIM_RULE_VERSION}；引擎 {C.ENGINE_VERSION}；工程模拟约定 {C.ENG_SIM_VERSION}",
         f"- 被测提交：{report['git_commit_under_test']}；Python {report['python']}；生成时间 {report['generated_at']}",
         f"- 测试数 {result.testsRun}：通过 {totals['pass']}，失败 {totals['fail']}，错误 {totals['error']}，"
@@ -144,6 +160,10 @@ def main():
               "| 用例 | 场景 | 关联基线 | 自测数 | 通过 | 研发自测 |", "|---|---|---|---|---|---|"]
     lines += [f"| {r['case']} | {r['scene']} | {r['related_baseline_case']} | {r['tests']} | {r['passed']} | "
               f"{r['selftest_result']} |" for r in built]
+    lines += ["", "## 补充用例（按 PRD-CHG-2026-11-12-A 拆分单列；非冻结基线、非独立评测）", "",
+              "| 用例 | 场景 | 关联基线 | 自测数 | 通过 | 研发自测 | 评测纳入 |", "|---|---|---|---|---|---|---|"]
+    lines += [f"| {r['case']} | {r['scene']} | {r['related_baseline_case']} | {r['tests']} | {r['passed']} | "
+              f"{r['selftest_result']} | {r['independent_eval_status']} |" for r in supp]
     other = [r for r in records if r["case"] in ("UNIT", "SUPPORT")]
     lines += ["", f"另含单元/支撑测试 {len(other)} 个，通过 {sum(r['outcome'] == 'pass' for r in other)} 个。", ""]
     with open(os.path.join(args.out, "selftest_matrix.md"), "w", encoding="utf-8") as fh:

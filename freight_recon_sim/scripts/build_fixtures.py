@@ -147,7 +147,7 @@ def main():
     b16s_h = b16_h + ["币种"]
     batch("tc16_map_supplement", [["WB-SIM-0101", "FR001", "50.00", P, "10.000", "CNY"]],
           [["WB-SIM-0101", "FR001", "5.00", "10.000"]], b16s_h, w16_h, mapping=False,
-          note="ENG-SIM 自建补充夹具：在 TC-16 账单表头补「币种」列，用于证明确认后可进入核对；非基线原文")
+          note="补充用例 TC-16-S1 夹具（按 PRD-CHG-2026-11-12-A 单列）：在 TC-16 账单表头补「币种」列，仅用于验证可消除 VAL-001 缺列障碍，不代表核对成功；非基线原文")
     sup = copy.deepcopy(confirm16)
     sup["tables"]["SIM_BILL"]["币种"] = "currency"
     write_json("tc16_map_supplement/mapping_confirm.json", sup)
